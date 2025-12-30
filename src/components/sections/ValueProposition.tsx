@@ -1,4 +1,35 @@
-import { Target, BrainCircuit, TrendingUp } from "lucide-react";
+import { Target, BrainCircuit, TrendingUp, LucideIcon } from "lucide-react";
+
+interface PillarProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  stat: string;
+  statLabel: string;
+  index: number;
+}
+
+const Pillar = ({ icon: Icon, title, description, stat, statLabel, index }: PillarProps) => (
+  <div
+    className="card-tech-glow p-8 lg:p-10 group"
+    style={{ animationDelay: `${index * 0.1}s` }}
+  >
+    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+      <Icon className="w-7 h-7 text-primary stroke-[1.5]" />
+    </div>
+    
+    <h3 className="text-h3 mb-4 group-hover:text-primary transition-colors">{title}</h3>
+    
+    <p className="text-muted-foreground leading-relaxed mb-6">
+      {description}
+    </p>
+    
+    <div className="pt-4 border-t border-border">
+      <div className="text-4xl font-bold text-gradient-blue">{stat}</div>
+      <p className="text-sm text-muted-foreground mt-1">{statLabel}</p>
+    </div>
+  </div>
+);
 
 const pillars = [
   {
@@ -26,30 +57,24 @@ const pillars = [
 
 const ValueProposition = () => {
   return (
-    <section className="section-padding bg-gray-light">
+    <section className="section-padding bg-gradient-to-b from-background to-gray-light relative">
+      {/* Decorative line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+      
       <div className="container-bcr">
-        <h2 className="text-h2-sm lg:text-h2 text-center mb-16">
-          Tres Pilares de Transformación
-        </h2>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Metodología Probada
+          </span>
+          <h2 className="text-h2-sm lg:text-h2">
+            Tres Pilares de{" "}
+            <span className="text-gradient-blue">Transformación</span>
+          </h2>
+        </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar, index) => (
-            <div
-              key={pillar.title}
-              className="bg-background p-8 lg:p-12 rounded-xl card-hover"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <pillar.icon className="w-12 h-12 text-primary stroke-[1.5]" />
-              
-              <h3 className="text-h3 mt-6 mb-4">{pillar.title}</h3>
-              
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {pillar.description}
-              </p>
-              
-              <div className="text-4xl font-bold text-primary">{pillar.stat}</div>
-              <p className="text-sm text-muted-foreground">{pillar.statLabel}</p>
-            </div>
+            <Pillar key={pillar.title} {...pillar} index={index} />
           ))}
         </div>
       </div>
