@@ -1,6 +1,69 @@
-import { Search, Settings, Bot, Handshake, Check, ArrowRight } from "lucide-react";
+import { Search, Settings, Bot, Handshake, Check, ArrowRight, LucideIcon } from "lucide-react";
 
-const services = [
+interface ServiceCardProps {
+  number: string;
+  icon: LucideIcon;
+  title: string;
+  tagline: string;
+  description: string;
+  features: string[];
+  duration: string;
+  cta: string;
+}
+
+const ServiceCard = ({ number, icon: Icon, title, tagline, description, features, duration, cta }: ServiceCardProps) => (
+  <div className="relative group">
+    {/* Gradient border effect on hover */}
+    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-primary-hover to-accent-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+    
+    <div className="relative bg-card border border-border group-hover:border-transparent p-8 lg:p-10 rounded-xl transition-all duration-300">
+      {/* Number background */}
+      <div className="tech-number absolute top-4 right-6 select-none">
+        {number}
+      </div>
+      
+      <div className="relative z-10">
+        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:shadow-glow transition-all duration-300">
+          <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+        </div>
+        
+        <h3 className="text-2xl lg:text-3xl font-bold mb-3">{title}</h3>
+        
+        <p className="text-body-lg text-primary italic mb-4 font-medium">
+          "{tagline}"
+        </p>
+        
+        <p className="text-muted-foreground mb-6">{description}</p>
+        
+        <ul className="space-y-3 mb-6">
+          {features.map((feature, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check className="w-3 h-3 text-primary" />
+              </div>
+              <span className="text-sm text-foreground">{feature}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <span className="w-2 h-2 rounded-full bg-primary" />
+          {duration}
+        </div>
+        
+        <a
+          href="#contacto"
+          className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all"
+        >
+          {cta}
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+const services: ServiceCardProps[] = [
   {
     number: "01",
     icon: Search,
@@ -68,54 +131,23 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="servicios" className="section-padding bg-background">
+    <section id="servicios" className="section-padding bg-gray-light bg-dots-pattern relative">
       <div className="container-bcr">
         <div className="text-center mb-16">
-          <h2 className="text-h2-sm lg:text-h2 mb-4">Nuestros Servicios</h2>
-          <p className="text-body-lg text-muted-foreground">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Soluciones Integrales
+          </span>
+          <h2 className="text-h2-sm lg:text-h2 mb-4">
+            Nuestros <span className="text-gradient-blue">Servicios</span>
+          </h2>
+          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
             Soluciones modulares adaptadas a tu fase de crecimiento
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service) => (
-            <div
-              key={service.number}
-              className="border border-border p-8 lg:p-12 rounded-xl hover:border-primary transition-colors duration-300 group"
-            >
-              <div className="text-8xl font-thin text-gray-light select-none mb-4">
-                {service.number}
-              </div>
-              
-              <service.icon className="w-8 h-8 text-primary mb-4 stroke-[1.5]" />
-              
-              <h3 className="text-2xl lg:text-3xl font-bold mb-3">{service.title}</h3>
-              
-              <p className="text-body-lg text-foreground italic mb-4">
-                "{service.tagline}"
-              </p>
-              
-              <p className="text-muted-foreground mb-6">{service.description}</p>
-              
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="text-sm text-muted-foreground mb-4">{service.duration}</div>
-              
-              <a
-                href="#contacto"
-                className="text-primary font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all"
-              >
-                {service.cta}
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+            <ServiceCard key={service.number} {...service} />
           ))}
         </div>
       </div>

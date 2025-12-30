@@ -14,23 +14,36 @@ const criteria = [
 
 const IdealCustomerSection = () => {
   return (
-    <section className="section-padding bg-gray-light">
-      <div className="container-bcr max-w-4xl">
-        <h2 className="text-h2-sm lg:text-h2 text-center mb-16">
-          ¿Es B&Cr Para Tu Empresa?
-        </h2>
+    <section className="section-padding bg-background relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+      
+      <div className="container-bcr max-w-5xl relative z-10">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Cliente Ideal
+          </span>
+          <h2 className="text-h2-sm lg:text-h2">
+            ¿Es B&Cr <span className="text-gradient-blue">Para Tu Empresa</span>?
+          </h2>
+        </div>
         
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-4 mb-12">
           {criteria.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-              <p className="text-body-lg">{item}</p>
+            <div 
+              key={idx} 
+              className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-all group"
+            >
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:shadow-glow transition-all">
+                <Check className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <p className="text-body-lg pt-1">{item}</p>
             </div>
           ))}
         </div>
         
         <div className="text-center">
-          <Button variant="hero" size="xl" asChild>
+          <Button variant="hero" size="xl" className="shadow-glow" asChild>
             <a href="#contacto">Sí, ese soy yo - Solicitar llamada</a>
           </Button>
         </div>
