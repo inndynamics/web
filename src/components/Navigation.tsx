@@ -33,7 +33,7 @@ const Navigation = () => {
     >
       <div className="container-bcr flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <Logo height={72} />
+          <Logo height={90} />
         </a>
 
         {/* Desktop Navigation */}
