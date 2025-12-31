@@ -77,17 +77,17 @@ const TechStackSection = () => {
               value={key}
               className="border-gradient"
             >
-              <div className="bg-dark-lighter/80 backdrop-blur-sm p-8 lg:p-12 rounded-xl">
+              <div className="bg-background/95 backdrop-blur-sm p-8 lg:p-12 rounded-xl border border-border/50">
                 <div className="grid sm:grid-cols-2 gap-6">
                   {category.items.map((item, idx) => (
                     <div 
                       key={idx} 
-                      className="flex items-start gap-4 p-4 rounded-lg bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors group"
+                      className="flex items-start gap-4 p-5 rounded-lg bg-muted/80 border border-border hover:border-primary/50 hover:bg-muted transition-all group"
                     >
-                      <div className="w-3 h-3 rounded-full bg-primary mt-1.5 group-hover:shadow-glow transition-shadow" />
+                      <div className="w-3 h-3 rounded-full bg-primary mt-1.5 group-hover:shadow-glow transition-shadow flex-shrink-0" />
                       <div>
-                        <p className="text-primary-foreground font-medium">{item.name}</p>
-                        <p className="text-sm text-primary-foreground/60">{item.desc}</p>
+                        <p className="text-foreground font-semibold">{item.name}</p>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
                       </div>
                     </div>
                   ))}
