@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
             
             <p className="text-sm text-primary-foreground/40">
-              info@bcrgrowthpartners.es
+              contacto@bcrgrowth.com
               <br />
               Sevilla, Andalucía, España
             </p>
