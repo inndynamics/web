@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="container-bcr">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <Logo variant="white" height={36} className="mb-4" />
+            <Logo variant="white" height={38} className="mb-4" />
             <p className="text-sm text-primary-foreground/60 mb-2">
               Architecture of Growth
             </p>

@@ -1,4 +1,4 @@
-import logoImage from "@/assets/bcr-logo.png";
+import logoSvg from "@/assets/bcr-logo.svg";
 
 interface LogoProps {
   className?: string;
@@ -6,13 +6,13 @@ interface LogoProps {
   height?: number;
 }
 
-const Logo = ({ className = "", variant = "default", height = 48 }: LogoProps) => {
+const Logo = ({ className = "", variant = "default", height = 44 }: LogoProps) => {
   return (
     <img 
-      src={logoImage}
+      src={logoSvg}
       alt="B&Cr. Growth Partners"
       className={`object-contain ${variant === "white" ? "brightness-0 invert" : ""} ${className}`}
-      style={{ height: `${height}px` }}
+      style={{ height: `${height}px`, width: 'auto' }}
     />
   );
 };
