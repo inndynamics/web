@@ -1,15 +1,21 @@
 const team = [
   {
+    name: "Alberto Diaz Carranza",
+    role: "Partner & CEO",
+    description: "Lidera la visión estratégica y el crecimiento de B&Cr. Experto en transformación empresarial y desarrollo de negocio con amplia experiencia en el ecosistema empresarial andaluz.",
+    quote: "El crecimiento sostenible empieza por una estrategia clara",
+  },
+  {
     name: "Joaquín Benavente Barragán",
-    role: "Co-Founder & Sales Director",
+    role: "Partner & Sales Director",
     description: "Especialista en sistemas de ventas y business development. Experto en profesionalización comercial para PYMES. Red estratégica en banca, fondos PE y empresarios andaluces.",
     quote: "No vendemos teoría, instalamos sistemas que funcionan",
   },
   {
-    name: "[CEO Name]",
-    role: "Co-Founder & Operations Director",
-    description: "Especialista en automatización, IA y transformación digital. Experto en operaciones, tech stack e integración de sistemas. Background en BI, RPA y eficiencia operativa.",
-    quote: "Convertimos Excel en máquinas de eficiencia",
+    name: "Pedro Ros Álvarez",
+    role: "Partner & COO",
+    description: "Responsable de operaciones y eficiencia. Especialista en automatización, IA y transformación digital. Background en BI, RPA e integración de sistemas.",
+    quote: "Convertimos procesos manuales en máquinas de eficiencia",
   },
 ];
 
