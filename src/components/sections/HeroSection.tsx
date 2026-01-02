@@ -10,7 +10,7 @@ const HeroSection = () => {
       
       <div className="container-bcr flex-1 flex items-center relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
-          <div className="space-y-8 animate-fade-in-up">
+          <div className="space-y-8 animate-fade-in-up mt-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Sparkles className="w-4 h-4 text-primary" />
               <p className="text-sm text-primary font-medium tracking-wide">
