@@ -27,7 +27,7 @@ const TeamSection = () => {
           Quiénes Somos
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {team.map((member, idx) => (
             <div key={idx} className="text-center">
               <div className="w-40 h-40 lg:w-48 lg:h-48 bg-gray-light rounded-full mx-auto mb-6 flex items-center justify-center">
