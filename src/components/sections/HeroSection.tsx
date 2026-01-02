@@ -83,7 +83,7 @@ const HeroSection = () => {
           }, {
             end: 65,
             suffix: "%+",
-            label: "Margen promedio"
+            label: "Margen de beneficio promedio"
           }, {
             end: 12,
             suffix: " meses",
