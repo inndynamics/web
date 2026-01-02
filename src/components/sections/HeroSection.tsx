@@ -87,7 +87,7 @@ const HeroSection = () => {
           }, {
             end: 6,
             suffix: " meses",
-            label: "Contrato promedio"
+            label: "Proyecto mínimo"
           }].map((stat, index) => <div key={stat.label} className="text-center p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group" style={{
             animationDelay: `${index * 0.1}s`
           }}>
