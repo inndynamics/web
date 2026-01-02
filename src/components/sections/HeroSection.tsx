@@ -85,7 +85,7 @@ const HeroSection = () => {
             suffix: "%+",
             label: "Margen de beneficio promedio"
           }, {
-            end: 12,
+            end: 6,
             suffix: " meses",
             label: "Contrato promedio"
           }].map((stat, index) => <div key={stat.label} className="text-center p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group" style={{
