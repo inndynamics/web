@@ -12,7 +12,7 @@ const team = [
     quote: "No vendemos teoría, instalamos sistemas que funcionan",
   },
   {
-    name: "Pedro Ros Álvarez",
+    name: "Pedro Ros",
     role: "Partner & COO",
     description: "Responsable de operaciones y eficiencia. Especialista en automatización, IA y transformación digital. Background en BI, RPA e integración de sistemas.",
     quote: "Convertimos procesos manuales en máquinas de eficiencia",
