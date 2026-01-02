@@ -77,7 +77,7 @@ const HeroSection = () => {
         <div className="container-bcr">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[{
-            end: 20,
+            end: 350,
             suffix: "+",
             label: "Empresas transformadas"
           }, {
