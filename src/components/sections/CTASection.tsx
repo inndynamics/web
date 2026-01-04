@@ -138,10 +138,10 @@ const CTASection = () => {
         <p className="mt-8 text-primary-foreground/60">
           O escríbenos a{" "}
           <a
-            href="mailto:info@bcrgrowthpartners.es"
+            href="mailto:contacto@bcrgrowth.com"
             className="text-primary-hover hover:underline"
           >
-            info@bcrgrowthpartners.es
+            contacto@bcrgrowth.com
           </a>
         </p>
       </div>
