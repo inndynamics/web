@@ -3,7 +3,7 @@ import AnimatedGraphic from "@/components/AnimatedGraphic";
 import CountUp from "@/components/CountUp";
 import { ArrowRight, Sparkles } from "lucide-react";
 const HeroSection = () => {
-  return <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 bg-background bg-grid-pattern relative overflow-hidden">
+  return <section className="min-h-screen flex flex-col justify-center pt-48 pb-12 bg-background bg-grid-pattern relative overflow-hidden">
       {/* Gradient orbs */}
       <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-40 left-1/4 w-72 h-72 bg-primary-hover/10 rounded-full blur-3xl pointer-events-none" />
