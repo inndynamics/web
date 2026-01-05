@@ -1,5 +1,6 @@
 import Logo from "@/components/Logo";
 import { Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   servicios: [
@@ -15,9 +16,9 @@ const footerLinks = {
     { label: "Contacto", href: "#contacto" },
   ],
   legal: [
-    { label: "Aviso Legal", href: "#" },
-    { label: "Política de Privacidad", href: "#" },
-    { label: "Términos y Condiciones", href: "#" },
+    { label: "Aviso Legal", href: "/aviso-legal", isRoute: true },
+    { label: "Política de Privacidad", href: "/politica-privacidad", isRoute: true },
+    { label: "Términos y Condiciones", href: "/terminos-condiciones", isRoute: true },
   ],
 };
 
@@ -73,12 +74,21 @@ const Footer = () => {
             <ul className="space-y-2 mb-6">
               {footerLinks.legal.map((link, idx) => (
                 <li key={idx}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
