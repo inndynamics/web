@@ -14,16 +14,221 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      client_access_logs: {
+        Row: {
+          accessed_at: string
+          client_id: string
+          id: string
+        }
+        Insert: {
+          accessed_at?: string
+          client_id: string
+          id?: string
+        }
+        Update: {
+          accessed_at?: string
+          client_id?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_access_logs_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      client_services: {
+        Row: {
+          client_id: string
+          created_at: string
+          id: string
+          progress_percentage: number
+          service_description: string | null
+          service_name: string
+          start_date: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          id?: string
+          progress_percentage?: number
+          service_description?: string | null
+          service_name: string
+          start_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          id?: string
+          progress_percentage?: number
+          service_description?: string | null
+          service_name?: string
+          start_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_services_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      diagnostics: {
+        Row: {
+          client_id: string
+          diagnostic_type: string
+          executed_at: string
+          executed_by: string | null
+          id: string
+          results: Json | null
+        }
+        Insert: {
+          client_id: string
+          diagnostic_type: string
+          executed_at?: string
+          executed_by?: string | null
+          id?: string
+          results?: Json | null
+        }
+        Update: {
+          client_id?: string
+          diagnostic_type?: string
+          executed_at?: string
+          executed_by?: string | null
+          id?: string
+          results?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostics_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "diagnostics_executed_by_fkey"
+            columns: ["executed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      service_updates: {
+        Row: {
+          created_at: string
+          created_by_admin: string | null
+          id: string
+          service_id: string
+          update_description: string | null
+          update_title: string
+        }
+        Insert: {
+          created_at?: string
+          created_by_admin?: string | null
+          id?: string
+          service_id: string
+          update_description?: string | null
+          update_title: string
+        }
+        Update: {
+          created_at?: string
+          created_by_admin?: string | null
+          id?: string
+          service_id?: string
+          update_description?: string | null
+          update_title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_updates_created_by_admin_fkey"
+            columns: ["created_by_admin"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "service_updates_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "client_services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_role: {
+        Args: { _user_id: string }
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +355,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "client"],
+    },
   },
 } as const
