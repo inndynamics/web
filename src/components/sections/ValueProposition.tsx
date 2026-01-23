@@ -42,7 +42,7 @@ const pillars = [
   {
     icon: BrainCircuit,
     title: "Operaciones Inteligentes",
-    description: "Eliminamos tareas repetitivas con RPA e IA. Automatización de procesos, integración CRM-ERP-Facturación, dashboards financieros en tiempo real y reducción de hasta 25% en costes operativos",
+    description: "Operaciones ágiles y escalables. Eliminamos la fricción operativa automatizando procesos, integrando sistemas y dotando a tu equipo de dashboards que facilitan tomar decisiones en tiempo real. Resultado: eficiencia medible y márgenes protegidos",
     stat: "-25%",
     statLabel: "reducción costes operativos",
   },
