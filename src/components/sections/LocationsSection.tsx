@@ -9,108 +9,226 @@ const locations = [
   {
     id: "sevilla",
     name: "Sevilla",
-    left: 27,
-    top: 72,
+    left: 18,
+    top: 78,
   },
   {
     id: "madrid",
     name: "Madrid",
-    left: 30,
-    top: 65,
+    left: 20,
+    top: 68,
   },
   {
     id: "andorra",
     name: "Andorra",
-    left: 35,
-    top: 58,
+    left: 28,
+    top: 60,
   },
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 58,
-    top: 18,
+    left: 62,
+    top: 22,
   },
 ];
 
 // ================================
 // TEXTOS DE LA SECCIÓN
-// Modifica aquí el título y descripción
 // ================================
 const sectionTitle = "Nuestras Sedes";
 const sectionDescription =
   "BCR Growth Partners opera desde varios hubs europeos para estar cerca de las empresas que acompañamos en su crecimiento.";
 
-// ================================
-// COLORES DE LOS MARCADORES
-// Modifica aquí los colores de los puntos
-// ================================
-const markerStyles = {
-  base: "bg-primary", // Color base del marcador
-  hover: "bg-primary-hover", // Color en hover
-  ring: "ring-primary/30", // Color del anillo exterior
-};
-
 interface LocationMarkerProps {
   location: typeof locations[0];
   isActive: boolean;
   onToggle: () => void;
+  onClose: () => void;
 }
 
-const LocationMarker = ({ location, isActive, onToggle }: LocationMarkerProps) => {
+const LocationMarker = ({ location, isActive, onToggle, onClose }: LocationMarkerProps) => {
   return (
     <div
-      className="absolute z-10 group cursor-pointer"
+      className="absolute z-10 cursor-pointer"
       style={{
         left: `${location.left}%`,
         top: `${location.top}%`,
         transform: "translate(-50%, -50%)",
       }}
       onMouseEnter={onToggle}
-      onMouseLeave={onToggle}
+      onMouseLeave={onClose}
       onClick={onToggle}
       data-city={location.name}
     >
-      {/* Marcador circular */}
+      {/* Marcador circular con borde blanco */}
       <div
         className={`
           w-3 h-3 md:w-4 md:h-4 rounded-full 
-          ${markerStyles.base}
-          ring-4 ${markerStyles.ring}
+          bg-primary
+          border-2 border-white
+          shadow-lg
           transition-all duration-300 ease-out
-          ${isActive ? "scale-150 ring-8" : "hover:scale-125"}
-          shadow-glow
+          ${isActive ? "scale-150" : "hover:scale-125"}
         `}
       />
 
       {/* Tooltip */}
       <div
         className={`
-          absolute left-1/2 -translate-x-1/2 bottom-full mb-2
+          absolute left-1/2 -translate-x-1/2 bottom-full mb-3
           px-3 py-1.5 rounded-lg
-          bg-card border border-border shadow-lg
-          whitespace-nowrap text-sm font-medium text-foreground
+          bg-foreground text-background
+          whitespace-nowrap text-sm font-medium
+          shadow-xl
           transition-all duration-200
           ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
         `}
       >
         {location.name}
         {/* Flecha del tooltip */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-card" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-transparent border-t-foreground" />
       </div>
     </div>
   );
 };
 
+// ================================
+// MAPA SVG DE EUROPA
+// Mapa vectorial minimalista y corporativo
+// ================================
+const EuropeMap = () => (
+  <svg
+    viewBox="0 0 1000 700"
+    className="w-full h-auto"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    {/* Fondo */}
+    <rect width="1000" height="700" className="fill-muted/20" />
+    
+    {/* Islandia */}
+    <path
+      d="M180 80 Q200 70 220 75 Q240 80 250 95 Q255 110 245 125 Q230 135 210 130 Q190 125 180 110 Q175 95 180 80Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Noruega y Suecia */}
+    <path
+      d="M480 40 Q500 35 520 50 Q535 70 540 100 Q545 140 540 180 Q535 220 525 260 Q515 290 500 310 Q485 325 470 315 Q460 300 455 270 Q450 240 455 200 Q460 160 465 120 Q470 80 480 40Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Finlandia */}
+    <path
+      d="M560 60 Q580 50 600 60 Q620 75 635 100 Q645 130 650 170 Q652 210 645 250 Q635 280 615 290 Q590 295 570 280 Q555 260 550 230 Q545 190 550 150 Q555 110 560 60Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Reino Unido */}
+    <path
+      d="M300 200 Q320 190 335 200 Q350 215 355 240 Q358 270 350 300 Q340 330 320 345 Q300 355 285 340 Q275 320 278 290 Q280 260 285 230 Q290 205 300 200Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Escocia */}
+    <path
+      d="M295 180 Q310 170 325 180 Q335 195 330 210 Q320 225 305 225 Q290 220 288 205 Q287 190 295 180Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Irlanda */}
+    <path
+      d="M255 230 Q275 220 290 235 Q300 255 295 280 Q285 300 265 305 Q245 300 240 280 Q238 255 255 230Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Península Ibérica (España y Portugal) */}
+    <path
+      d="M145 430 Q160 400 200 380 Q250 365 300 370 Q340 378 360 400 Q375 425 370 460 Q365 500 340 530 Q310 555 270 560 Q220 558 180 540 Q150 515 140 480 Q138 450 145 430Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Francia */}
+    <path
+      d="M320 320 Q360 310 400 320 Q440 335 460 365 Q470 400 455 430 Q435 455 400 460 Q365 462 340 445 Q320 425 315 395 Q310 360 320 320Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Bélgica, Países Bajos, Alemania */}
+    <path
+      d="M380 260 Q420 250 470 260 Q520 275 555 310 Q575 350 565 390 Q550 425 510 440 Q470 450 430 435 Q395 415 380 380 Q370 340 380 260Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Polonia y Europa del Este */}
+    <path
+      d="M550 280 Q600 270 650 285 Q700 305 730 350 Q750 400 735 450 Q710 490 660 500 Q610 505 565 480 Q530 450 525 400 Q522 340 550 280Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Italia */}
+    <path
+      d="M460 420 Q480 410 495 425 Q510 445 515 480 Q518 520 505 560 Q488 595 465 610 Q445 615 435 595 Q430 570 440 540 Q445 505 450 470 Q455 440 460 420Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Sicilia */}
+    <path
+      d="M475 620 Q495 615 510 625 Q520 640 515 655 Q500 665 480 660 Q465 650 470 635 Q472 622 475 620Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Cerdeña */}
+    <path
+      d="M430 540 Q445 535 455 550 Q460 570 450 585 Q435 592 425 580 Q418 565 425 550 Q428 542 430 540Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Córcega */}
+    <path
+      d="M420 490 Q432 485 440 498 Q445 515 438 528 Q425 535 418 522 Q412 508 418 495 Q419 490 420 490Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Grecia y Balcanes */}
+    <path
+      d="M560 480 Q600 470 640 490 Q670 515 675 555 Q672 595 645 620 Q610 640 570 630 Q540 615 530 580 Q525 540 540 505 Q550 485 560 480Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Creta */}
+    <path
+      d="M590 660 Q620 655 650 660 Q665 670 660 682 Q640 692 610 690 Q585 685 583 672 Q582 662 590 660Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Turquía (parte europea) */}
+    <path
+      d="M680 520 Q720 510 750 530 Q770 555 765 585 Q750 610 715 615 Q680 612 665 590 Q655 565 665 540 Q672 525 680 520Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Ucrania y Rusia occidental */}
+    <path
+      d="M700 300 Q760 280 830 300 Q890 330 920 390 Q940 450 920 510 Q890 560 830 580 Q770 590 720 560 Q680 525 675 470 Q672 400 700 300Z"
+      className="fill-muted/60"
+    />
+    
+    {/* Países Bálticos */}
+    <path
+      d="M580 220 Q610 210 640 225 Q665 245 670 280 Q668 315 645 335 Q615 350 585 340 Q560 325 555 295 Q552 260 565 235 Q572 222 580 220Z"
+      className="fill-muted/60"
+    />
+  </svg>
+);
+
 const LocationsSection = () => {
   const [activeLocation, setActiveLocation] = useState<string | null>(null);
 
-  const handleToggle = (id: string) => {
-    setActiveLocation((prev) => (prev === id ? null : id));
-  };
-
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      {/* Decorative gradient */}
+      {/* Decorative gradients */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
@@ -129,96 +247,27 @@ const LocationsSection = () => {
           </p>
         </div>
 
-        {/* Mapa contenedor */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative card-tech p-6 md:p-10">
-            {/* SVG del mapa de Europa estilizado */}
-            <div className="relative w-full aspect-[4/3] md:aspect-[16/10]">
-              <svg
-                viewBox="0 0 800 500"
-                className="w-full h-full"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Fondo del mapa */}
-                <rect width="800" height="500" fill="transparent" />
-                
-                {/* Europa simplificada - Contorno estilizado */}
-                <path
-                  d="M180 380 L200 400 L220 390 L250 410 L280 380 L300 390 L320 370 L340 380 L360 360 L380 370 L400 350 L420 360 L440 340 L460 350 L480 330 L500 340 L520 320 L540 330 L560 310 L580 320 L600 300 L620 280 L640 260 L620 240 L600 250 L580 230 L560 240 L540 220 L520 210 L500 200 L480 180 L460 170 L440 160 L420 150 L400 140 L380 130 L360 120 L340 110 L320 100 L300 95 L280 90 L260 95 L240 100 L220 110 L200 120 L180 140 L160 160 L150 180 L145 200 L150 220 L155 240 L160 260 L165 280 L170 300 L175 320 L180 340 L180 360 Z"
-                  className="fill-muted/30 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Península Ibérica */}
-                <path
-                  d="M150 280 L170 300 L180 320 L200 340 L220 360 L250 380 L280 390 L300 380 L290 350 L270 320 L250 290 L230 260 L200 250 L170 260 L150 280 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Escandinavia */}
-                <path
-                  d="M420 50 L430 70 L440 90 L450 110 L460 130 L480 150 L500 140 L510 120 L500 100 L490 80 L480 60 L460 50 L440 45 L420 50 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Finlandia */}
-                <path
-                  d="M500 40 L510 60 L530 80 L550 90 L560 110 L550 130 L530 140 L510 130 L500 110 L495 90 L490 70 L500 40 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Italia */}
-                <path
-                  d="M380 260 L390 280 L400 300 L410 320 L420 340 L410 360 L390 350 L380 330 L375 310 L370 290 L375 270 L380 260 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Reino Unido */}
-                <path
-                  d="M250 140 L260 160 L270 180 L280 200 L275 220 L260 230 L245 220 L240 200 L245 180 L250 160 L250 140 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Irlanda */}
-                <path
-                  d="M220 160 L230 175 L235 195 L225 210 L210 200 L205 180 L210 165 L220 160 Z"
-                  className="fill-muted/40 stroke-border"
-                  strokeWidth="2"
-                />
-                
-                {/* Puntos decorativos de ciudades adicionales (sin interacción) */}
-                <circle cx="350" cy="200" r="3" className="fill-muted-foreground/20" />
-                <circle cx="400" cy="220" r="3" className="fill-muted-foreground/20" />
-                <circle cx="320" cy="250" r="3" className="fill-muted-foreground/20" />
-                <circle cx="450" cy="180" r="3" className="fill-muted-foreground/20" />
-                <circle cx="380" cy="180" r="3" className="fill-muted-foreground/20" />
-                <circle cx="260" cy="170" r="3" className="fill-muted-foreground/20" />
-                
-                {/* Líneas de conexión decorativas */}
-                <line x1="220" y1="360" x2="240" y2="325" className="stroke-primary/20" strokeWidth="1" strokeDasharray="4 4" />
-                <line x1="240" y1="325" x2="280" y2="290" className="stroke-primary/20" strokeWidth="1" strokeDasharray="4 4" />
-                <line x1="280" y1="290" x2="460" y2="100" className="stroke-primary/20" strokeWidth="1" strokeDasharray="4 4" />
-              </svg>
-
+        {/* Contenedor del mapa */}
+        <div className="relative w-full max-w-[900px] mx-auto">
+          <div className="card-tech p-4 md:p-8 overflow-hidden">
+            {/* Mapa SVG */}
+            <div className="relative">
+              <EuropeMap />
+              
               {/* Marcadores interactivos */}
               {locations.map((location) => (
                 <LocationMarker
                   key={location.id}
                   location={location}
                   isActive={activeLocation === location.id}
-                  onToggle={() => handleToggle(location.id)}
+                  onToggle={() => setActiveLocation(location.id)}
+                  onClose={() => setActiveLocation(null)}
                 />
               ))}
             </div>
           </div>
 
-          {/* Lista de ciudades en móvil */}
+          {/* Lista de ciudades */}
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {locations.map((location) => (
               <div
@@ -227,7 +276,7 @@ const LocationsSection = () => {
                 onMouseEnter={() => setActiveLocation(location.id)}
                 onMouseLeave={() => setActiveLocation(null)}
               >
-                <div className={`w-3 h-3 rounded-full ${markerStyles.base} group-hover:scale-125 transition-transform`} />
+                <div className="w-3 h-3 rounded-full bg-primary border-2 border-white shadow group-hover:scale-125 transition-transform" />
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors">
                   {location.name}
                 </span>
