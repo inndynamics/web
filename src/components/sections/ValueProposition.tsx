@@ -35,7 +35,7 @@ const pillars = [
   {
     icon: Target,
     title: "Venta Científica",
-    description: "Instalamos sistemas de ventas reproducibles que no dependen del fundador. Sales Playbook documentado, CRM configurado, KPIs medibles y dashboards en tiempo real para ingresos predecibles mes a mes",
+    description: "Convertimos tu equipo comercial en una máquina de ventas. Menos improvisación, más sistema. Sales Playbook documentado, CRM operativo y métricas claras que garantizan ingresos predecibles.",
     stat: "+30%",
     statLabel: "incremento promedio en ventas",
   },
