@@ -4,7 +4,7 @@ import ValueProposition from "@/components/sections/ValueProposition";
 import ServicesSection from "@/components/sections/ServicesSection";
 import TechStackSection from "@/components/sections/TechStackSection";
 import MethodologySection from "@/components/sections/MethodologySection";
-import IdealCustomerSection from "@/components/sections/IdealCustomerSection";
+import LocationsSection from "@/components/sections/LocationsSection";
 import DifferentiatorsSection from "@/components/sections/DifferentiatorsSection";
 import CasesSection from "@/components/sections/CasesSection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -21,7 +21,7 @@ const Index = () => {
       <ServicesSection />
       <TechStackSection />
       <MethodologySection />
-      <IdealCustomerSection />
+      <LocationsSection />
       <DifferentiatorsSection />
       <CasesSection />
       <TeamSection />
