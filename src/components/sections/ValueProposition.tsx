@@ -49,7 +49,7 @@ const pillars = [
   {
     icon: TrendingUp,
     title: "Mentalidad de Inversor",
-    description: "Preparamos tu empresa para máximo valor. Alto EBITDA, procesos documentados, independencia del fundador y datos estructurados para escalabilidad o venta futura",
+    description: "Empresa preparada para crecer o vender. Instalamos la estructura que buscan inversores: procesos robustos, márgenes predecibles, independencia del fundador y gobierno corporativo que genera confianza y valor.",
     stat: "4x",
     statLabel: "ROI promedio en 12 meses",
   },
