@@ -5,30 +5,32 @@ import { useState, useRef, useEffect } from "react";
 // Modifica aquí los nombres y posiciones de cada ciudad
 // Las coordenadas left/top son porcentajes respecto al mapa
 // ================================
+import europeMap from "@/assets/europe-map.png";
+
 const locations = [
   {
     id: "sevilla",
     name: "Sevilla",
-    left: 23,
-    top: 68,
+    left: 21,
+    top: 78,
   },
   {
     id: "madrid",
     name: "Madrid",
-    left: 26,
-    top: 62,
+    left: 24,
+    top: 70,
   },
   {
     id: "andorra",
     name: "Andorra",
-    left: 29,
-    top: 55,
+    left: 30,
+    top: 60,
   },
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 63,
-    top: 26,
+    left: 62,
+    top: 16,
   },
 ];
 
@@ -120,46 +122,12 @@ const LocationsSection = () => {
               className="relative w-full"
               style={{ maxWidth: "900px", margin: "0 auto" }}
             >
-              {/* SVG del mapa de Europa - EXACTO como se proporciona */}
-              <svg
-                className="w-full h-auto block"
-                viewBox="0 0 1000 800"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                {/* Fondo */}
-                <rect width="100%" height="100%" fill="#F5F7FA" />
-
-                {/* Mapa de Europa (contorno simplificado, sin fronteras internas ni nombres) */}
-                <path
-                  d="M120,520 L140,480 L160,470 L200,460 L230,440 L260,430 L300,430 L340,420 L360,410 L380,390 L390,360 L410,350 L430,340 L450,330 L470,320 L500,320 L530,330 L550,350 L560,380 L580,390 L600,400 L620,420 L640,440 L660,460 L690,470 L720,480 L740,500 L760,520 L770,550 L780,580 L770,610 L750,640 L720,660 L680,680 L640,690 L600,700 L560,705 L520,710 L480,710 L440,705 L400,695 L360,680 L330,660 L300,640 L270,620 L240,600 L210,580 L190,560 L170,540 Z"
-                  fill="#D9E2EC"
-                />
-                {/* Península Escandinava / Norte */}
-                <path
-                  d="M600,150 L620,130 L650,120 L680,130 L700,150 L710,180 L705,210 L690,230 L670,240 L650,250 L630,250 L610,240 L600,220 L595,190 Z"
-                  fill="#D9E2EC"
-                />
-                {/* Islas Reino Unido / Irlanda */}
-                <path
-                  d="M260,330 L270,310 L290,300 L310,305 L320,320 L315,340 L300,350 L280,350 Z"
-                  fill="#D9E2EC"
-                />
-                <path
-                  d="M230,360 L240,345 L255,340 L270,345 L275,360 L270,375 L255,380 L240,375 Z"
-                  fill="#D9E2EC"
-                />
-                {/* Italia */}
-                <path
-                  d="M520,470 L540,480 L550,500 L555,520 L545,540 L530,550 L520,540 L515,520 L510,500 Z"
-                  fill="#D9E2EC"
-                />
-                {/* Balcanes y Grecia */}
-                <path
-                  d="M580,500 L600,510 L620,520 L630,540 L625,560 L610,575 L595,580 L580,575 L570,560 L565,540 L570,520 Z"
-                  fill="#D9E2EC"
-                />
-              </svg>
+              {/* Imagen real del mapa de Europa */}
+              <img
+                src={europeMap}
+                alt="Mapa de Europa"
+                className="w-full h-auto block rounded-lg"
+              />
 
               {/* Marcadores interactivos */}
               {locations.map((location) => (
