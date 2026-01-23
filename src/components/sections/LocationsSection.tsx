@@ -11,26 +11,26 @@ const locations = [
   {
     id: "sevilla",
     name: "Sevilla",
-    left: 28,
-    top: 70,
+    left: 33,
+    top: 73,
   },
   {
     id: "madrid",
     name: "Madrid",
-    left: 30,
-    top: 62,
+    left: 36,
+    top: 65,
   },
   {
     id: "andorra",
     name: "Andorra",
-    left: 32,
-    top: 56,
+    left: 39,
+    top: 58,
   },
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 54,
-    top: 28,
+    left: 53,
+    top: 26,
   },
 ];
 
