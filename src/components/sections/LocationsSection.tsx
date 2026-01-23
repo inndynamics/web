@@ -9,26 +9,26 @@ const locations = [
   {
     id: "sevilla",
     name: "Sevilla",
-    left: 18,
-    top: 78,
+    left: 22,
+    top: 73,
   },
   {
     id: "madrid",
     name: "Madrid",
-    left: 20,
-    top: 68,
+    left: 24,
+    top: 66,
   },
   {
     id: "andorra",
     name: "Andorra",
-    left: 28,
+    left: 31,
     top: 60,
   },
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 62,
-    top: 22,
+    left: 60,
+    top: 24,
   },
 ];
 
@@ -93,132 +93,231 @@ const LocationMarker = ({ location, isActive, onToggle, onClose }: LocationMarke
 };
 
 // ================================
-// MAPA SVG DE EUROPA
-// Mapa vectorial minimalista y corporativo
+// MAPA SVG DE EUROPA - Real geographic outline
+// Basado en coordenadas geográficas reales simplificadas
 // ================================
-const EuropeMap = () => (
+const EuropeMapSVG = () => (
   <svg
-    viewBox="0 0 1000 700"
+    viewBox="0 0 800 600"
     className="w-full h-auto"
-    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid meet"
+    style={{ background: "#F5F7FA" }}
   >
-    {/* Fondo */}
-    <rect width="1000" height="700" className="fill-muted/20" />
-    
-    {/* Islandia */}
+    {/* Portugal */}
     <path
-      d="M180 80 Q200 70 220 75 Q240 80 250 95 Q255 110 245 125 Q230 135 210 130 Q190 125 180 110 Q175 95 180 80Z"
-      className="fill-muted/60"
+      d="M142,380 L152,365 L158,340 L155,320 L148,310 L142,320 L138,350 L140,370 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Noruega y Suecia */}
+    {/* España (Spain) */}
     <path
-      d="M480 40 Q500 35 520 50 Q535 70 540 100 Q545 140 540 180 Q535 220 525 260 Q515 290 500 310 Q485 325 470 315 Q460 300 455 270 Q450 240 455 200 Q460 160 465 120 Q470 80 480 40Z"
-      className="fill-muted/60"
+      d="M155,320 L158,340 L152,365 L160,385 L175,405 L195,415 L220,420 L250,415 L275,400 L285,380 L280,355 L270,340 L250,330 L235,315 L220,310 L200,305 L180,308 L165,315 L155,320 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Finlandia */}
+    {/* Francia (France) */}
     <path
-      d="M560 60 Q580 50 600 60 Q620 75 635 100 Q645 130 650 170 Q652 210 645 250 Q635 280 615 290 Q590 295 570 280 Q555 260 550 230 Q545 190 550 150 Q555 110 560 60Z"
-      className="fill-muted/60"
+      d="M235,315 L250,330 L270,340 L285,335 L305,320 L320,300 L335,280 L340,260 L330,245 L310,240 L290,245 L270,255 L250,270 L235,285 L225,300 L235,315 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Reino Unido */}
+    {/* Reino Unido (United Kingdom) */}
     <path
-      d="M300 200 Q320 190 335 200 Q350 215 355 240 Q358 270 350 300 Q340 330 320 345 Q300 355 285 340 Q275 320 278 290 Q280 260 285 230 Q290 205 300 200Z"
-      className="fill-muted/60"
+      d="M255,195 L265,180 L270,160 L265,140 L255,125 L240,120 L225,130 L220,150 L225,175 L235,195 L250,205 L255,195 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Escocia */}
+    {/* Escocia parte */}
     <path
-      d="M295 180 Q310 170 325 180 Q335 195 330 210 Q320 225 305 225 Q290 220 288 205 Q287 190 295 180Z"
-      className="fill-muted/60"
+      d="M240,120 L250,105 L255,90 L248,80 L235,85 L228,100 L230,115 L240,120 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Irlanda */}
+    {/* Irlanda (Ireland) */}
     <path
-      d="M255 230 Q275 220 290 235 Q300 255 295 280 Q285 300 265 305 Q245 300 240 280 Q238 255 255 230Z"
-      className="fill-muted/60"
+      d="M200,155 L215,145 L225,155 L225,175 L215,190 L200,195 L188,185 L185,170 L192,158 L200,155 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Península Ibérica (España y Portugal) */}
+    {/* Bélgica y Países Bajos */}
     <path
-      d="M145 430 Q160 400 200 380 Q250 365 300 370 Q340 378 360 400 Q375 425 370 460 Q365 500 340 530 Q310 555 270 560 Q220 558 180 540 Q150 515 140 480 Q138 450 145 430Z"
-      className="fill-muted/60"
+      d="M310,240 L325,230 L340,225 L350,235 L345,250 L330,255 L315,250 L310,240 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Francia */}
+    {/* Alemania (Germany) */}
     <path
-      d="M320 320 Q360 310 400 320 Q440 335 460 365 Q470 400 455 430 Q435 455 400 460 Q365 462 340 445 Q320 425 315 395 Q310 360 320 320Z"
-      className="fill-muted/60"
+      d="M340,225 L360,215 L380,210 L400,220 L415,240 L420,265 L410,290 L390,300 L365,295 L345,280 L340,260 L340,240 L340,225 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Bélgica, Países Bajos, Alemania */}
+    {/* Polonia (Poland) */}
     <path
-      d="M380 260 Q420 250 470 260 Q520 275 555 310 Q575 350 565 390 Q550 425 510 440 Q470 450 430 435 Q395 415 380 380 Q370 340 380 260Z"
-      className="fill-muted/60"
+      d="M400,220 L425,210 L455,215 L485,230 L495,255 L490,280 L470,295 L440,295 L415,285 L405,265 L400,240 L400,220 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Polonia y Europa del Este */}
+    {/* Italia (Italy) */}
     <path
-      d="M550 280 Q600 270 650 285 Q700 305 730 350 Q750 400 735 450 Q710 490 660 500 Q610 505 565 480 Q530 450 525 400 Q522 340 550 280Z"
-      className="fill-muted/60"
-    />
-    
-    {/* Italia */}
-    <path
-      d="M460 420 Q480 410 495 425 Q510 445 515 480 Q518 520 505 560 Q488 595 465 610 Q445 615 435 595 Q430 570 440 540 Q445 505 450 470 Q455 440 460 420Z"
-      className="fill-muted/60"
+      d="M365,295 L375,310 L385,330 L390,355 L395,380 L390,410 L375,430 L360,440 L350,425 L355,400 L365,370 L370,345 L365,320 L360,305 L365,295 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
     {/* Sicilia */}
     <path
-      d="M475 620 Q495 615 510 625 Q520 640 515 655 Q500 665 480 660 Q465 650 470 635 Q472 622 475 620Z"
-      className="fill-muted/60"
+      d="M375,450 L390,445 L400,455 L395,468 L380,470 L370,460 L375,450 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
     {/* Cerdeña */}
     <path
-      d="M430 540 Q445 535 455 550 Q460 570 450 585 Q435 592 425 580 Q418 565 425 550 Q428 542 430 540Z"
-      className="fill-muted/60"
+      d="M345,400 L355,395 L362,408 L358,425 L348,430 L340,420 L342,405 L345,400 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
     {/* Córcega */}
     <path
-      d="M420 490 Q432 485 440 498 Q445 515 438 528 Q425 535 418 522 Q412 508 418 495 Q419 490 420 490Z"
-      className="fill-muted/60"
+      d="M350,365 L358,358 L365,370 L362,385 L352,390 L345,380 L350,365 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Grecia y Balcanes */}
+    {/* Suiza y Austria */}
     <path
-      d="M560 480 Q600 470 640 490 Q670 515 675 555 Q672 595 645 620 Q610 640 570 630 Q540 615 530 580 Q525 540 540 505 Q550 485 560 480Z"
-      className="fill-muted/60"
+      d="M340,280 L365,275 L390,280 L405,290 L400,305 L380,310 L355,305 L340,295 L340,280 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Creta */}
+    {/* República Checa, Eslovaquia, Hungría */}
     <path
-      d="M590 660 Q620 655 650 660 Q665 670 660 682 Q640 692 610 690 Q585 685 583 672 Q582 662 590 660Z"
-      className="fill-muted/60"
+      d="M405,265 L425,260 L450,270 L470,285 L475,305 L460,320 L435,325 L410,315 L400,300 L405,280 L405,265 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Turquía (parte europea) */}
+    {/* Rumania */}
     <path
-      d="M680 520 Q720 510 750 530 Q770 555 765 585 Q750 610 715 615 Q680 612 665 590 Q655 565 665 540 Q672 525 680 520Z"
-      className="fill-muted/60"
+      d="M475,305 L500,295 L530,300 L550,320 L555,350 L540,375 L510,380 L480,365 L470,340 L475,315 L475,305 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Ucrania y Rusia occidental */}
+    {/* Bulgaria */}
     <path
-      d="M700 300 Q760 280 830 300 Q890 330 920 390 Q940 450 920 510 Q890 560 830 580 Q770 590 720 560 Q680 525 675 470 Q672 400 700 300Z"
-      className="fill-muted/60"
+      d="M510,380 L540,375 L560,390 L565,415 L550,435 L520,440 L495,425 L490,400 L500,385 L510,380 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
     
-    {/* Países Bálticos */}
+    {/* Grecia (Greece) */}
     <path
-      d="M580 220 Q610 210 640 225 Q665 245 670 280 Q668 315 645 335 Q615 350 585 340 Q560 325 555 295 Q552 260 565 235 Q572 222 580 220Z"
-      className="fill-muted/60"
+      d="M495,425 L510,445 L515,470 L508,495 L490,510 L465,505 L450,485 L455,460 L470,445 L485,435 L495,425 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Croacia, Serbia, Bosnia, etc. */}
+    <path
+      d="M410,315 L435,325 L455,340 L460,365 L450,390 L425,400 L400,390 L385,365 L390,340 L400,325 L410,315 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Dinamarca */}
+    <path
+      d="M360,190 L375,180 L385,190 L380,210 L365,215 L355,205 L360,190 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Noruega (Norway) */}
+    <path
+      d="M365,50 L380,40 L400,35 L420,45 L435,70 L445,100 L450,140 L445,180 L430,200 L410,190 L395,165 L385,130 L380,95 L375,65 L365,50 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Suecia (Sweden) */}
+    <path
+      d="M420,45 L440,55 L455,80 L465,120 L470,160 L465,200 L455,230 L440,240 L425,225 L420,190 L430,150 L435,110 L430,75 L420,55 L420,45 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Finlandia (Finland) */}
+    <path
+      d="M465,40 L490,30 L520,40 L545,65 L560,100 L565,145 L555,190 L535,220 L510,230 L485,215 L470,185 L465,145 L468,100 L470,60 L465,40 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Estonia, Letonia, Lituania (Baltic States) */}
+    <path
+      d="M485,215 L510,210 L530,225 L535,250 L525,275 L500,280 L480,265 L478,240 L485,215 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Bielorrusia y Ucrania occidental */}
+    <path
+      d="M530,225 L560,215 L600,225 L640,250 L660,290 L655,340 L630,380 L590,395 L550,385 L520,360 L510,320 L520,280 L530,250 L530,225 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Rusia occidental (parte visible) */}
+    <path
+      d="M560,100 L600,80 L660,90 L720,120 L760,170 L775,230 L770,300 L745,360 L700,400 L650,405 L610,380 L580,340 L570,290 L575,240 L585,190 L580,140 L560,100 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
+    />
+    
+    {/* Islandia (Iceland) */}
+    <path
+      d="M120,60 L150,50 L180,55 L195,75 L188,95 L165,105 L135,100 L115,85 L118,68 L120,60 Z"
+      fill="#D9E2EC"
+      stroke="#C1CCD6"
+      strokeWidth="0.5"
     />
   </svg>
 );
@@ -250,9 +349,9 @@ const LocationsSection = () => {
         {/* Contenedor del mapa */}
         <div className="relative w-full max-w-[900px] mx-auto">
           <div className="card-tech p-4 md:p-8 overflow-hidden">
-            {/* Mapa SVG */}
+            {/* Mapa SVG con marcadores */}
             <div className="relative">
-              <EuropeMap />
+              <EuropeMapSVG />
               
               {/* Marcadores interactivos */}
               {locations.map((location) => (
