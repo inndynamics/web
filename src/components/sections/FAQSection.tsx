@@ -22,6 +22,38 @@ const faqs = [{
   answer: "500K€ de facturación anual. Por debajo de eso, recomendamos otras soluciones más adecuadas para tu fase. Queremos trabajar donde podamos generar máximo impacto."
 }];
 const FAQSection = () => {
-  return;
+  return (
+    <section className="section-padding bg-background">
+      <div className="container-bcr">
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Preguntas Frecuentes
+          </span>
+          <h2 className="text-h2-sm lg:text-h2 mb-4">
+            Resolvemos tus <span className="text-gradient-blue">dudas</span>
+          </h2>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="card-tech px-6 border-none"
+              >
+                <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default FAQSection;
