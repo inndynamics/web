@@ -1,0 +1,90 @@
+.nuestras-sedes {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.nuestras-sedes-badge {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #0052a5;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.nuestras-sedes h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 10px 0 20px;
+  color: #1a1a1a;
+}
+
+.nuestras-sedes h2 .highlight {
+  color: #0052a5;
+}
+
+.nuestras-sedes-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f7fa;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.marker {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #0052a5;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.marker:hover {
+  width: 18px;
+  height: 18px;
+  background: #003d7a;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translate(-50%, -110%);
+  transition: opacity 0.2s;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
