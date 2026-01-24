@@ -29,8 +29,8 @@ const locations = [
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 53,
-    top: 27,
+    left: 55,
+    top: 30,
   },
 ];
 
