@@ -15,12 +15,6 @@ const team = [{
   quote: "Convertimos procesos manuales en máquinas de eficiencia"
 }];
 const TeamSection = () => {
-  return <section id="equipo" className="section-padding bg-background">
-      <div className="container-bcr">
-        
-        
-        
-      </div>
-    </section>;
+  return;
 };
 export default TeamSection;
