@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 // Modifica aquí los nombres y posiciones de cada ciudad
 // Las coordenadas left/top son porcentajes respecto al mapa
 // ================================
-import europeMap from "@/assets/europe-map.png";
+const europeMapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Europe_topography_map_en.png/1280px-Europe_topography_map_en.png";
 
 const locations = [
   {
@@ -124,7 +124,7 @@ const LocationsSection = () => {
             >
               {/* Imagen real del mapa de Europa */}
               <img
-                src={europeMap}
+                src={europeMapUrl}
                 alt="Mapa de Europa"
                 className="w-full h-auto block rounded-lg"
               />
