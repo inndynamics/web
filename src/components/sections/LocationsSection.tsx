@@ -30,7 +30,7 @@ const locations = [
     id: "helsinki",
     name: "Helsinki",
     left: 55,
-    top: 42,
+    top: 38,
   },
 ];
 
