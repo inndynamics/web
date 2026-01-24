@@ -5,32 +5,32 @@ import { useState, useRef, useEffect } from "react";
 // Modifica aquí los nombres y posiciones de cada ciudad
 // Las coordenadas left/top son porcentajes respecto al mapa
 // ================================
-const europeMapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Europe_topography_map_en.png/1280px-Europe_topography_map_en.png";
+const europeMapUrl = "https://ultimaps.com/maps/blank/europe.png";
 
 const locations = [
   {
     id: "sevilla",
     name: "Sevilla",
-    left: 33.8,
-    top: 73,
+    left: 26,
+    top: 69,
   },
   {
     id: "madrid",
     name: "Madrid",
-    left: 36.2,
-    top: 64.5,
+    left: 28,
+    top: 62,
   },
   {
     id: "andorra",
     name: "Andorra",
-    left: 38.5,
-    top: 57,
+    left: 31,
+    top: 56,
   },
   {
     id: "helsinki",
     name: "Helsinki",
-    left: 53,
-    top: 27,
+    left: 52,
+    top: 25,
   },
 ];
 
