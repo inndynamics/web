@@ -12,7 +12,7 @@ const locations = [
     id: "sevilla",
     name: "Sevilla",
     left: 30,
-    top: 71,
+    top: 90,
   },
   {
     id: "madrid",
