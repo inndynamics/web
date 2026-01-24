@@ -81,7 +81,18 @@ const LocationsSection = () => {
   };
 
   const handleCityButtonEnter = (locationId: string) => {
-    // Solo actualizar el estado, sin calcular posición del tooltip del mapa
+    // CORREGIDO: Calcular la posición del tooltip basado en el marcador del mapa
+    const location = locations.find((loc) => loc.id === locationId);
+    if (location && containerRef.current) {
+      // Calcular la posición del tooltip en el centro del marcador
+      const markerX = (location.left / 100) * containerRef.current.offsetWidth;
+      const markerY = (location.top / 100) * containerRef.current.offsetHeight;
+      
+      setTooltipPosition({
+        x: markerX,
+        y: markerY,
+      });
+    }
     setActiveLocation(locationId);
   };
 
