@@ -24,7 +24,7 @@ const locations = [
     id: "andorra",
     name: "Andorra",
     left: 40,
-    top: 65,
+    top: 40,
   },
   {
     id: "helsinki",
