@@ -46,7 +46,14 @@ const LocationsSection = () => {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const clearAllTooltips = () => {
+    setActiveLocation(null);
+  };
+
   const handleMarkerHover = (locationId: string, event: React.MouseEvent | React.TouchEvent) => {
+    // Primero limpiar cualquier tooltip activo
+    clearAllTooltips();
+    
     const target = event.currentTarget as HTMLElement;
     const rect = target.getBoundingClientRect();
     const containerRect = containerRef.current?.getBoundingClientRect();
@@ -57,20 +64,43 @@ const LocationsSection = () => {
         y: rect.top - containerRect.top,
       });
     }
-    setActiveLocation(locationId);
+    // Usar setTimeout para asegurar que el estado se limpió antes de activar el nuevo
+    setTimeout(() => setActiveLocation(locationId), 0);
   };
 
   const handleMarkerLeave = () => {
-    setActiveLocation(null);
+    clearAllTooltips();
   };
 
   const handleMarkerClick = (locationId: string, event: React.MouseEvent | React.TouchEvent) => {
     event.preventDefault();
+    // Primero limpiar todos los tooltips
+    clearAllTooltips();
+    
     if (activeLocation === locationId) {
-      setActiveLocation(null);
-    } else {
-      handleMarkerHover(locationId, event);
+      // Si es el mismo, dejarlo cerrado
+      return;
     }
+    
+    const target = event.currentTarget as HTMLElement;
+    const rect = target.getBoundingClientRect();
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    
+    if (containerRect) {
+      setTooltipPosition({
+        x: rect.left - containerRect.left + rect.width / 2,
+        y: rect.top - containerRect.top,
+      });
+    }
+    // Activar el nuevo tooltip después de limpiar
+    setTimeout(() => setActiveLocation(locationId), 10);
+  };
+
+  const handleCityButtonClick = (locationId: string) => {
+    // Primero limpiar todos los tooltips activos
+    clearAllTooltips();
+    // Luego activar el nuevo
+    setTimeout(() => setActiveLocation(locationId), 10);
   };
 
   // Close tooltip when clicking outside on mobile
@@ -170,8 +200,9 @@ const LocationsSection = () => {
               <div
                 key={location.id}
                 className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-all group cursor-pointer"
-                onMouseEnter={() => setActiveLocation(location.id)}
-                onMouseLeave={() => setActiveLocation(null)}
+                onMouseEnter={() => handleCityButtonClick(location.id)}
+                onMouseLeave={() => clearAllTooltips()}
+                onClick={() => handleCityButtonClick(location.id)}
               >
                 <div className="w-3 h-3 rounded-full bg-[#0052a5] border-2 border-white shadow group-hover:scale-125 transition-transform" />
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors">
