@@ -15,6 +15,6 @@ const team = [{
   quote: "Convertimos procesos manuales en máquinas de eficiencia"
 }];
 const TeamSection = () => {
-  return;
+  return null;
 };
 export default TeamSection;

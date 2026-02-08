@@ -1,77 +1,96 @@
-import { Target, BrainCircuit, TrendingUp, LucideIcon } from "lucide-react";
+import { Compass, Cpu, TrendingUp, LucideIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 interface PillarProps {
   icon: LucideIcon;
   title: string;
   description: string;
-  stat: string;
-  statLabel: string;
+  deliverables: string[];
   index: number;
 }
 
-const Pillar = ({ icon: Icon, title, description, stat, statLabel, index }: PillarProps) => (
+const Pillar = ({ icon: Icon, title, description, deliverables, index }: PillarProps) => (
   <div
-    className="card-tech-glow p-8 lg:p-10 group"
+    className="bg-card rounded-xl border border-border p-8 lg:p-10 transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 group"
     style={{ animationDelay: `${index * 0.1}s` }}
   >
-    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-      <Icon className="w-7 h-7 text-primary stroke-[1.5]" />
+    <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+      <Icon className="w-6 h-6 text-primary stroke-[1.5]" />
     </div>
-    
-    <h3 className="text-h3 mb-4 group-hover:text-primary transition-colors">{title}</h3>
-    
-    <p className="text-muted-foreground leading-relaxed mb-6">
+
+    <h3 className="text-h3 text-foreground mb-3">{title}</h3>
+
+    <p className="text-muted-foreground leading-relaxed text-body">
       {description}
     </p>
-    
-    <div className="pt-4 border-t border-border">
-      <div className="text-4xl font-bold text-gradient-blue">{stat}</div>
-      <p className="text-sm text-muted-foreground mt-1">{statLabel}</p>
+
+    <Separator className="my-6" />
+
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3 block">
+        Entregables
+      </span>
+      <ul className="space-y-2">
+        {deliverables.map((item) => (
+          <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 );
 
 const pillars = [
   {
-    icon: Target,
+    icon: Compass,
     title: "Venta Científica",
-    description: "Convertimos tu equipo comercial en una máquina de ventas. Menos improvisación, más sistema. Sales Playbook documentado, CRM operativo y métricas claras que garantizan ingresos predecibles.",
-    stat: "+30%",
-    statLabel: "incremento promedio en ventas",
+    description:
+      "Diseñamos un modelo de venta repetible: definición de ICP, proceso por etapas y criterios de calidad. Aterrizamos el trabajo en un playbook accionable y un CRM que permite gestionar sin depender de la intuición.",
+    deliverables: [
+      "Sales Playbook documentado",
+      "CRM operativo y dashboards",
+      "Previsibilidad de ingresos",
+    ],
   },
   {
-    icon: BrainCircuit,
+    icon: Cpu,
     title: "Operaciones Inteligentes",
-    description: "Operaciones ágiles y escalables. Eliminamos la fricción operativa automatizando procesos, integrando sistemas y dotando a tu equipo de dashboards que facilitan tomar decisiones en tiempo real. Resultado: eficiencia medible y márgenes protegidos",
-    stat: "-25%",
-    statLabel: "reducción costes operativos",
+    description:
+      "Identificamos cuellos de botella y estandarizamos procesos para eliminar el re-trabajo. Automatizamos flujos críticos para dejar visibilidad operativa con datos que soportan decisiones rápidas.",
+    deliverables: [
+      "Automatización de procesos",
+      "Eliminación de fricción",
+      "Eficiencia medible",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Mentalidad de Inversor",
-    description: "Empresa preparada para crecer o vender. Instalamos la estructura que buscan inversores: procesos robustos, márgenes predecibles, independencia del fundador y gobierno corporativo que genera confianza y valor.",
-    stat: "4x",
-    statLabel: "ROI promedio en 12 meses",
+    description:
+      "Construimos los fundamentos que revisan los inversores: reporting fiable, unit economics claros y gobierno corporativo. Reducimos la dependencia del fundador mediante sistemas de gestión robustos.",
+    deliverables: [
+      "Reporting financiero fiable",
+      "Gobernanza y estructura",
+      "Independencia del fundador",
+    ],
   },
 ];
 
 const ValueProposition = () => {
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-gray-light relative">
-      {/* Decorative line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
-      
+    <section className="section-padding bg-background relative">
       <div className="container-bcr">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Metodología Probada
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
+            Metodología
           </span>
-          <h2 className="text-h2-sm lg:text-h2">
-            Tres Pilares de{" "}
-            <span className="text-gradient-blue">Transformación</span>
+          <h2 className="text-h2-sm lg:text-h2 text-foreground">
+            Tres Pilares de Transformación
           </h2>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar, index) => (
             <Pillar key={pillar.title} {...pillar} index={index} />
