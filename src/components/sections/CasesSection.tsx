@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 
 const cases = [
   {
@@ -35,6 +35,7 @@ const cases = [
   {
     title: "IAPepe — IA para Gestión de Eventos",
     subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
+    link: "https://iapepe.com",
     tags: [
       "Asistente IA conversacional desplegado",
       "Automatización de logística y agenda",
@@ -96,7 +97,14 @@ const CasesSection = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {cases.slice(1).map((caseItem, idx) => (
               <div key={idx} className="card-tech-glow p-8 lg:p-10">
-                <h3 className="text-xl lg:text-2xl font-bold mb-2">{caseItem.title}</h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-xl lg:text-2xl font-bold">{caseItem.title}</h3>
+                  {caseItem.link && (
+                    <a href={caseItem.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-foreground hover:bg-primary p-2 rounded-lg transition-colors">
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
                 <p className="text-muted-foreground mb-6">{caseItem.subtitle}</p>
                 
                 <div className="flex flex-wrap gap-3">
