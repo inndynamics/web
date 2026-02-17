@@ -32,6 +32,15 @@ const cases = [
       "Fundador recuperó 20h/semana",
     ],
   },
+  {
+    title: "Aura — IA para Gestión de Eventos",
+    subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
+    tags: [
+      "Asistente IA conversacional desplegado",
+      "Automatización de logística y agenda",
+      "Integración con plataformas de ticketing",
+    ],
+  },
 ];
 
 const CasesSection = () => {
