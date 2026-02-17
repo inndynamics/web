@@ -33,7 +33,7 @@ const cases = [
     ],
   },
   {
-    title: "Aura — IA para Gestión de Eventos",
+    title: "IAPepe — IA para Gestión de Eventos",
     subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
     tags: [
       "Asistente IA conversacional desplegado",
