@@ -2,14 +2,16 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import ValueProposition from "@/components/sections/ValueProposition";
 import ServicesSection from "@/components/sections/ServicesSection";
-import TechStackSection from "@/components/sections/TechStackSection";
-import MethodologySection from "@/components/sections/MethodologySection";
-import LocationsSection from "@/components/sections/LocationsSection";
-import DifferentiatorsSection from "@/components/sections/DifferentiatorsSection";
-import CasesSection from "@/components/sections/CasesSection";
-import TeamSection from "@/components/sections/TeamSection";
-import FAQSection from "@/components/sections/FAQSection";
+import AgencySection from "@/components/sections/AgencySection";
+import AgentCatalogSection from "@/components/sections/AgentCatalogSection";
+import TopAgentsSection from "@/components/sections/TopAgentsSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
+import PricingSection from "@/components/sections/PricingSection";
+import OnboardingSection from "@/components/sections/OnboardingSection";
+import IntegrationsSection from "@/components/sections/IntegrationsSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CTASection from "@/components/sections/CTASection";
+import StatsSection from "@/components/sections/StatsSection";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => {
@@ -19,14 +21,16 @@ const Index = () => {
       <HeroSection />
       <ValueProposition />
       <ServicesSection />
-      <TechStackSection />
-      <MethodologySection />
-      <LocationsSection />
-      <DifferentiatorsSection />
-      <CasesSection />
-      <TeamSection />
-      <FAQSection />
+      <AgencySection />
+      <AgentCatalogSection />
+      <TopAgentsSection />
+      <ComparisonSection />
+      <PricingSection />
+      <OnboardingSection />
+      <IntegrationsSection />
+      <TestimonialsSection />
       <CTASection />
+      <StatsSection />
       <Footer />
     </div>
   );

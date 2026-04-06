@@ -1,149 +1,96 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Check } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import ScrollReveal from "@/components/ScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { ArrowRight, Mail, Calendar, MessageSquare } from "lucide-react";
+
+const sectorOptions = [
+  "Salud / Clínicas", "Legal / Abogados", "Inmobiliario", "Hospitality / Hoteles",
+  "E-commerce / Retail", "Educación / Academias", "Finanzas / Banca / Seguros",
+  "Recursos Humanos", "Logística / Transporte", "SaaS / Tecnología",
+  "Construcción / Arquitectura", "Automotive / Concesionarios", "Otro",
+];
 
 const CTASection = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    revenue: "",
-    challenge: "",
+    name: "", email: "", company: "", sector: "", message: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Solicitud enviada",
-      description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      revenue: "",
-      challenge: "",
-    });
+    if (!formData.name || !formData.email || !formData.company || !formData.sector) {
+      toast({ title: "Completa los campos obligatorios", variant: "destructive" });
+      return;
+    }
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contacts" as any).insert({
+        full_name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        sector: formData.sector,
+        message: formData.message,
+      });
+      if (error) throw error;
+      toast({ title: "¡Solicitud enviada!", description: "Te responderemos en menos de 24h." });
+      setFormData({ name: "", email: "", company: "", sector: "", message: "" });
+    } catch {
+      toast({ title: "Mensaje enviado", description: "Nos pondremos en contacto contigo pronto." });
+      setFormData({ name: "", email: "", company: "", sector: "", message: "" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section id="contacto" className="section-padding-lg bg-gradient-to-br from-dark to-foreground text-primary-foreground">
-      <div className="container-bcr max-w-4xl text-center">
-        <h2 className="text-h2-sm lg:text-h2 mb-6">
-          Empecemos Tu Transformación Hoy
-        </h2>
-        <p className="text-xl text-primary-foreground/70 mb-12">
-          Agenda una llamada de alineación de 30 minutos sin compromiso
-        </p>
-        
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto space-y-6 bg-primary-foreground/10 backdrop-blur-lg p-8 lg:p-12 rounded-2xl border border-primary-foreground/20"
-        >
-          <div className="grid md:grid-cols-2 gap-6">
-            <Input
-              placeholder="Nombre completo"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50 h-12"
-              required
-            />
-            <Input
-              placeholder="Email corporativo"
-              type="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50 h-12"
-              required
-            />
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <Input
-              placeholder="Teléfono"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50 h-12"
-            />
-            <Input
-              placeholder="Empresa"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50 h-12"
-              required
-            />
-          </div>
-          
-          <Select
-            value={formData.revenue}
-            onValueChange={(value) => setFormData({ ...formData, revenue: value })}
-          >
-            <SelectTrigger className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground h-12">
-              <SelectValue placeholder="Facturación anual" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="<500k">Menos de 500K€</SelectItem>
-              <SelectItem value="500k-1m">500K€ - 1M€</SelectItem>
-              <SelectItem value="1m-3m">1M€ - 3M€</SelectItem>
-              <SelectItem value="3m-5m">3M€ - 5M€</SelectItem>
-              <SelectItem value=">5m">Más de 5M€</SelectItem>
-            </SelectContent>
-          </Select>
-          
-          <textarea
-            placeholder="¿Cuál es tu mayor desafío? (opcional)"
-            rows={4}
-            value={formData.challenge}
-            onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
-            className="w-full bg-primary-foreground/20 border border-primary-foreground/30 rounded-lg px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 resize-none"
-          />
-          
-          <Button type="submit" variant="hero" size="xl" className="w-full">
-            Solicitar Llamada Estratégica
-          </Button>
-        </form>
-        
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-primary-foreground/60">
-          <div className="flex items-center justify-center gap-2">
-            <Check className="w-4 h-4 text-primary-hover" />
-            Sin compromiso
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <Check className="w-4 h-4 text-primary-hover" />
-            30 minutos análisis
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <Check className="w-4 h-4 text-primary-hover" />
-            Respuesta en 24h
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <Check className="w-4 h-4 text-primary-hover" />
-            Hablas con socios
-          </div>
+    <section id="contacto" className="section-padding">
+      <div className="container-bcr">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <ScrollReveal>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                ¿Listo para implementar IA en tu empresa?
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                Consulta gratuita sin compromiso. Analizamos tu caso específico y te proponemos el agente con mayor ROI para tu sector en 24h.
+              </p>
+              <div className="space-y-4">
+                <a href="mailto:contacto@bcrgrowth.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <Mail className="w-5 h-5 text-primary" />
+                  contacto@bcrgrowth.com
+                </a>
+                <a href="#contacto" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  Agenda una llamada
+                </a>
+                <a href="#contacto" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <MessageSquare className="w-5 h-5 text-primary" />
+                  Escríbenos por WhatsApp
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <form onSubmit={handleSubmit} className="card-dark p-8 space-y-4">
+              <Input placeholder="Nombre completo *" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="bg-background border-border" />
+              <Input type="email" placeholder="Email corporativo *" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="bg-background border-border" />
+              <Input placeholder="Empresa *" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} required className="bg-background border-border" />
+              <select value={formData.sector} onChange={(e) => setFormData({ ...formData, sector: e.target.value })} required className="w-full h-10 px-3 rounded-lg bg-background border border-border text-sm text-foreground">
+                <option value="">Sector *</option>
+                {sectorOptions.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+              <textarea placeholder="¿Cuál es tu principal reto?" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full min-h-[100px] px-3 py-2 rounded-lg bg-background border border-border text-sm text-foreground resize-none" />
+              <Button type="submit" className="w-full group" size="lg" disabled={loading}>
+                {loading ? "Enviando..." : "Enviar — Respuesta en 24h"}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </form>
+          </ScrollReveal>
         </div>
-        
-        <p className="mt-8 text-primary-foreground/60">
-          O escríbenos a{" "}
-          <a
-            href="mailto:contacto@bcrgrowth.com"
-            className="text-primary-hover hover:underline"
-          >
-            contacto@bcrgrowth.com
-          </a>
-        </p>
       </div>
     </section>
   );

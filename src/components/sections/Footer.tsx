@@ -1,120 +1,45 @@
-import Logo from "@/components/Logo";
-import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const footerLinks = {
-  servicios: [
-    { label: "BCR Diagnostic 360", href: "#servicios" },
-    { label: "Sales & Ops Transformation", href: "#servicios" },
-    { label: "Digital Efficiency Program", href: "#servicios" },
-    { label: "Advisory & Fractional", href: "#servicios" },
-  ],
-  recursos: [
-    { label: "Casos de Éxito", href: "#casos" },
-    { label: "Metodología", href: "#metodologia" },
-    { label: "Equipo", href: "#equipo" },
-    { label: "Contacto", href: "#contacto" },
-  ],
-  legal: [
-    { label: "Aviso Legal", href: "/aviso-legal", isRoute: true },
-    { label: "Política de Privacidad", href: "/politica-privacidad", isRoute: true },
-    { label: "Términos y Condiciones", href: "/terminos-condiciones", isRoute: true },
-  ],
-};
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground py-16">
+    <footer className="py-16 bg-card border-t border-border">
       <div className="container-bcr">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <Logo variant="white" height={80} className="mb-4" />
-            <p className="text-sm text-primary-foreground/60 mb-2">
-              Architecture of Growth
+            <a href="#" className="text-lg font-bold tracking-tight text-foreground">
+              B&CR <span className="text-primary">Growth</span>
+            </a>
+            <p className="text-sm text-muted-foreground mt-3">
+              Agentes IA, Automatización de Procesos y Desarrollo Web con IA.
             </p>
-            <p className="text-sm text-primary-foreground/40">
-              Consultora de crecimiento empresarial en Sevilla
-            </p>
           </div>
-          
           <div>
-            <h4 className="font-bold mb-4">Servicios</h4>
-            <ul className="space-y-2">
-              {footerLinks.servicios.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">Recursos</h4>
-            <ul className="space-y-2">
-              {footerLinks.recursos.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">Legal & Social</h4>
-            <ul className="space-y-2 mb-6">
-              {footerLinks.legal.map((link, idx) => (
-                <li key={idx}>
-                  {link.isRoute ? (
-                    <Link
-                      to={link.href}
-                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-            
-            <div className="flex gap-4 mb-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <h4 className="text-sm font-semibold mb-4">Servicios</h4>
+            <div className="space-y-2">
+              <a href="#servicios" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Agentes IA</a>
+              <a href="#servicios" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Automatización</a>
+              <a href="#servicios" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Desarrollo Web</a>
             </div>
-            
-            <p className="text-sm text-primary-foreground/40">
-              contacto@bcrgrowth.com
-              <br />
-              Sevilla, Andalucía, España
-            </p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold mb-4">Empresa</h4>
+            <div className="space-y-2">
+              <a href="#agentes" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Sectores</a>
+              <a href="#precios" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Precios</a>
+              <a href="#contacto" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Contacto</a>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold mb-4">Legal</h4>
+            <div className="space-y-2">
+              <Link to="/aviso-legal" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Aviso Legal</Link>
+              <Link to="/politica-privacidad" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Privacidad</Link>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">contacto@bcrgrowth.com</p>
           </div>
         </div>
-        
-        <div className="border-t border-primary-foreground/10 pt-8 text-center text-sm text-primary-foreground/40">
-          © 2025 B&Cr. Growth Partners. Todos los derechos reservados.
+        <div className="border-t border-border pt-8 text-center">
+          <p className="text-xs text-muted-foreground">© 2026 B&CR Growth. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
