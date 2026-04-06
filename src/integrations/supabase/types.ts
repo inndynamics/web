@@ -84,6 +84,36 @@ export type Database = {
           },
         ]
       }
+      contacts: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          sector: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          sector: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          sector?: string
+        }
+        Relationships: []
+      }
       diagnostics: {
         Row: {
           client_id: string
