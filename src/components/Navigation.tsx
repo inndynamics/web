@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
+import logoSvg from "@/assets/bcr-logo.svg";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
@@ -27,8 +28,8 @@ const Navigation = () => {
       isScrolled ? "bg-background/85 backdrop-blur-xl border-b border-border" : "bg-transparent"
     }`}>
       <div className="container-bcr flex items-center justify-between h-16">
-        <a href="#" className="text-lg font-bold tracking-tight text-foreground">
-          B&CR <span className="text-primary">Growth</span>
+        <a href="#" className="flex items-center">
+          <img src={logoSvg} alt="B&CR Growth" className="h-10 w-auto brightness-0 invert dark:brightness-100 dark:invert-0" style={{ filter: 'brightness(0) invert(1)' }} />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
