@@ -29,7 +29,7 @@ const Navigation = () => {
     }`}>
       <div className="container-bcr flex items-center justify-between h-16">
         <a href="#" className="flex items-center">
-          <img src={logoSvg} alt="B&CR Growth" className="h-10 w-auto brightness-0 invert dark:brightness-100 dark:invert-0" style={{ filter: 'brightness(0) invert(1)' }} />
+          <img src={logoSvg} alt="B&CR Growth" className="h-10 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
