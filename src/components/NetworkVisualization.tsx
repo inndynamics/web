@@ -26,16 +26,16 @@ const NetworkVisualization = () => {
     }
 
     const nodes: Node[] = [];
-    const count = 24;
+    const count = 28;
     const w = () => canvas.getBoundingClientRect().width;
     const h = () => canvas.getBoundingClientRect().height;
 
     for (let i = 0; i < count; i++) {
       nodes.push({
         x: Math.random() * 500, y: Math.random() * 500,
-        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
         r: 2 + Math.random() * 3, pulse: Math.random() * Math.PI * 2,
-        speed: 0.01 + Math.random() * 0.02,
+        speed: 0.008 + Math.random() * 0.015,
       });
     }
 
@@ -44,7 +44,6 @@ const NetworkVisualization = () => {
       const height = h();
       ctx.clearRect(0, 0, width, height);
 
-      // Update positions
       nodes.forEach(n => {
         n.x += n.vx; n.y += n.vy;
         n.pulse += n.speed;
@@ -60,12 +59,12 @@ const NetworkVisualization = () => {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            const alpha = (1 - dist / 150) * 0.3;
+          if (dist < 160) {
+            const alpha = (1 - dist / 160) * 0.2;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(79, 110, 247, ${alpha})`;
+            ctx.strokeStyle = `rgba(30, 76, 162, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -77,15 +76,14 @@ const NetworkVisualization = () => {
         const glow = 0.5 + Math.sin(n.pulse) * 0.3;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * (1 + Math.sin(n.pulse) * 0.2), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(79, 110, 247, ${glow})`;
+        ctx.fillStyle = `rgba(30, 76, 162, ${glow})`;
         ctx.fill();
 
-        // Glow
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * 3, 0, Math.PI * 2);
         const gradient = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 3);
-        gradient.addColorStop(0, `rgba(79, 110, 247, ${glow * 0.3})`);
-        gradient.addColorStop(1, "rgba(79, 110, 247, 0)");
+        gradient.addColorStop(0, `rgba(30, 76, 162, ${glow * 0.2})`);
+        gradient.addColorStop(1, "rgba(30, 76, 162, 0)");
         ctx.fillStyle = gradient;
         ctx.fill();
       });
