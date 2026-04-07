@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <a href="#" className="inline-block">
-              <img src={logoImg} alt="B&Cr. Growth Partners" className="h-12 w-auto" />
+              <img src={logoImg} alt="B&Cr. Growth Partners" className="h-16 w-auto" />
             </a>
             <p className="text-sm text-muted-foreground mt-3">
               Agentes IA, Automatización de Procesos y Desarrollo Web con IA.
