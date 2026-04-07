@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <a href="#" className="inline-block">
-              <img src={logoSvg} alt="B&CR Growth" className="h-10 w-auto" />
+              <img src={logoSvg} alt="B&CR Growth" className="h-10 w-auto" style={{ mixBlendMode: 'screen' }} />
             </a>
             <p className="text-sm text-muted-foreground mt-3">
               Agentes IA, Automatización de Procesos y Desarrollo Web con IA.
