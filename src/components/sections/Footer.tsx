@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="container-bcr">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <a href="#" className="text-lg font-bold tracking-tight text-foreground">
-              B&CR <span className="text-primary">Growth</span>
+            <a href="#" className="inline-block">
+              <img src={logoSvg} alt="B&CR Growth" className="h-8 w-auto brightness-0 invert" />
             </a>
             <p className="text-sm text-muted-foreground mt-3">
               Agentes IA, Automatización de Procesos y Desarrollo Web con IA.
