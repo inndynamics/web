@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoSvg from "@/assets/bcr-logo.svg";
 
 const Footer = () => {
   return (
