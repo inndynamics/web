@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <div className="card-dark-hover p-8 h-full flex flex-col">
+              <div className="card-dark-hover p-8 h-full flex flex-col bg-white">
                 <p className="text-foreground italic leading-relaxed flex-1 mb-6">"{t.quote}"</p>
                 <div>
                   <p className="font-semibold text-sm">— {t.name}</p>

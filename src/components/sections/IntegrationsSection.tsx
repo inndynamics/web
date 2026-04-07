@@ -13,7 +13,7 @@ const categories = [
 
 const IntegrationsSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-padding section-alt">
       <div className="container-bcr">
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -25,7 +25,7 @@ const IntegrationsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((cat, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <div className="card-dark p-5">
+              <div className="bg-white rounded-2xl border border-border p-5 shadow-sm">
                 <h4 className="text-xs font-mono text-primary tracking-wider uppercase mb-3">{cat.name}</h4>
                 <div className="space-y-2">
                   {cat.items.map((item, j) => (
