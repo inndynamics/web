@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/hooks/useTheme";
-import logoSvg from "@/assets/bcr-logo.svg";
+import logoImg from "@/assets/bcr-logo.png";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
@@ -15,7 +14,6 @@ const navLinks = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -25,34 +23,28 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-background/85 backdrop-blur-xl border-b border-border" : "bg-transparent"
+      isScrolled ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm" : "bg-transparent"
     }`}>
-      <div className="container-bcr flex items-center justify-between h-16">
+      <div className="container-bcr flex items-center justify-between h-20">
         <a href="#" className="flex items-center">
-          <img src={logoSvg} alt="B&CR Growth" className="h-12 w-auto" style={{ mixBlendMode: 'screen' }} />
+          <img src={logoImg} alt="B&Cr. Growth Partners" className="h-14 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               {link.label}
             </a>
           ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <button onClick={toggleTheme} className="p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
           <Button size="sm" asChild>
             <a href="#contacto">Solicitar Demo</a>
           </Button>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
-          <button onClick={toggleTheme} className="p-2 text-muted-foreground" aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-foreground" aria-label="Toggle menu">
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -60,10 +52,10 @@ const Navigation = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
+        <div className="md:hidden bg-background/98 backdrop-blur-xl border-b border-border">
           <div className="container-bcr py-4 space-y-3">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-sm text-muted-foreground hover:text-foreground py-2">
+              <a key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-sm text-muted-foreground hover:text-primary py-2">
                 {link.label}
               </a>
             ))}

@@ -46,7 +46,7 @@ const CTASection = () => {
   };
 
   return (
-    <section id="contacto" className="section-padding">
+    <section id="contacto" className="section-padding bg-gradient-to-br from-[hsl(219,30%,97%)] to-[hsl(219,40%,93%)]">
       <div className="container-bcr">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <ScrollReveal>
@@ -75,10 +75,10 @@ const CTASection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <form onSubmit={handleSubmit} className="card-dark p-8 space-y-4">
-              <Input placeholder="Nombre completo *" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="bg-background border-border" />
-              <Input type="email" placeholder="Email corporativo *" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="bg-background border-border" />
-              <Input placeholder="Empresa *" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} required className="bg-background border-border" />
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-border p-8 space-y-4 shadow-lg">
+              <Input placeholder="Nombre completo *" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
+              <Input type="email" placeholder="Email corporativo *" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
+              <Input placeholder="Empresa *" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} required />
               <select value={formData.sector} onChange={(e) => setFormData({ ...formData, sector: e.target.value })} required className="w-full h-10 px-3 rounded-lg bg-background border border-border text-sm text-foreground">
                 <option value="">Sector *</option>
                 {sectorOptions.map(s => <option key={s} value={s}>{s}</option>)}

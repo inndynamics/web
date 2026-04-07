@@ -7,19 +7,22 @@ import ScrollReveal from "@/components/ScrollReveal";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 relative overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[hsl(219,40%,97%)] to-[hsl(219,30%,94%)]" />
+
       <div className="container-bcr flex-1 flex items-center relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           <div className="space-y-8">
             <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm">
-                <span className="text-sm text-muted-foreground">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
+                <span className="text-sm text-primary font-medium">
                   Automatiza. Predice. Decide mejor.
                 </span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight text-foreground">
                 La era de los prompts{" "}
                 <span className="text-gradient">ha terminado.</span>
               </h1>
@@ -53,7 +56,7 @@ const HeroSection = () => {
           </div>
 
           <div className="relative hidden lg:block h-[500px]">
-            <div className="absolute inset-0 rounded-2xl overflow-hidden border border-border">
+            <div className="absolute inset-0 rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-[hsl(219,30%,97%)] to-[hsl(219,20%,93%)]">
               <NetworkVisualization />
             </div>
           </div>

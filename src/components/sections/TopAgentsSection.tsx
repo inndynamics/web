@@ -15,7 +15,7 @@ const topAgents = [
 
 const TopAgentsSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-padding section-alt">
       <div className="container-bcr">
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -25,7 +25,7 @@ const TopAgentsSection = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto bg-white rounded-2xl border border-border shadow-sm">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
@@ -38,19 +38,19 @@ const TopAgentsSection = () => {
               </thead>
               <tbody>
                 {topAgents.map((a) => (
-                  <tr key={a.rank} className={`border-b border-border/50 transition-colors hover:bg-card ${a.rank <= 3 ? "bg-card/50" : ""}`}>
+                  <tr key={a.rank} className={`border-b border-border/50 transition-colors hover:bg-primary/5 ${a.rank <= 3 ? "bg-primary/[0.03]" : ""}`}>
                     <td className="py-4 px-4">
                       <span className={`font-mono font-bold ${a.rank <= 3 ? "text-primary" : "text-muted-foreground"}`}>
                         {a.rank}
                       </span>
                     </td>
                     <td className="py-4 px-4 font-semibold">
-                      {a.name} {a.star && <span className="text-yellow-400">★</span>}
+                      {a.name} {a.star && <span className="text-yellow-500">★</span>}
                     </td>
                     <td className="py-4 px-4 text-muted-foreground hidden sm:table-cell">{a.sector}</td>
                     <td className="py-4 px-4 font-mono text-muted-foreground hidden md:table-cell">{a.price}</td>
                     <td className="py-4 px-4 text-right">
-                      <span className="font-mono font-bold text-success">{a.roi}</span>
+                      <span className="font-mono font-bold text-primary">{a.roi}</span>
                     </td>
                   </tr>
                 ))}

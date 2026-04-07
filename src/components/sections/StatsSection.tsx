@@ -11,14 +11,14 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="py-16 bg-card border-y border-border">
+    <section className="py-16 bg-primary text-primary-foreground">
       <div className="container-bcr">
         <ScrollReveal>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {stats.map((s, i) => (
               <div key={i} className="text-center min-w-[120px]">
-                <CountUp end={s.end} suffix={s.suffix} prefix={s.prefix} className="text-3xl md:text-4xl font-bold text-foreground" />
-                <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
+                <CountUp end={s.end} suffix={s.suffix} prefix={s.prefix} className="text-3xl md:text-4xl font-bold text-white" />
+                <p className="text-xs text-white/70 mt-1">{s.label}</p>
               </div>
             ))}
           </div>

@@ -34,7 +34,7 @@ const cases = [
 
 const AgencySection = () => {
   return (
-    <section id="agency" className="section-padding bg-secondary/30">
+    <section id="agency" className="section-padding section-alt">
       <div className="container-bcr">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -50,7 +50,7 @@ const AgencySection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {pillars.map((p, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <div className="card-dark p-6 text-center">
+              <div className="bg-white rounded-2xl border border-border p-6 text-center shadow-sm">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <p.icon className="w-5 h-5 text-primary" />
                 </div>
@@ -68,12 +68,12 @@ const AgencySection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {agents.map((a, i) => (
             <ScrollReveal key={i} delay={i * 0.03}>
-              <div className="card-dark-hover p-5">
+              <div className="card-dark-hover p-5 bg-white">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="w-4 h-4 text-primary" />
                   <h4 className="font-semibold text-sm">{a.name}</h4>
                 </div>
-                <p className="text-xs text-primary/80 font-medium mb-2">{a.role}</p>
+                <p className="text-xs text-primary font-medium mb-2">{a.role}</p>
                 <p className="text-xs text-muted-foreground leading-relaxed">{a.desc}</p>
               </div>
             </ScrollReveal>
@@ -88,7 +88,7 @@ const AgencySection = () => {
         <div className="flex flex-col md:flex-row items-stretch gap-4 mb-16">
           {methodology.map((m, i) => (
             <ScrollReveal key={i} delay={i * 0.1} className="flex-1">
-              <div className="card-dark p-6 h-full relative">
+              <div className="bg-white rounded-2xl border border-border p-6 h-full relative shadow-sm">
                 <span className="text-xs font-mono text-primary/50">0{i + 1}</span>
                 <h4 className="font-semibold mt-2 text-sm">{m.step}</h4>
                 <p className="text-xs text-muted-foreground mt-1">{m.desc}</p>
@@ -109,10 +109,10 @@ const AgencySection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {cases.map((c, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <div className="card-dark-hover p-6">
+              <div className="card-dark-hover p-6 bg-white">
                 <h4 className="font-semibold mb-3">{c.title}</h4>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{c.desc}</p>
-                <div className="text-sm font-semibold text-success bg-success/10 px-3 py-2 rounded-lg inline-block">
+                <div className="text-sm font-semibold text-primary bg-primary/10 px-3 py-2 rounded-lg inline-block">
                   {c.metric}
                 </div>
               </div>

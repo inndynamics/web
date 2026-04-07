@@ -47,7 +47,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section id="precios" className="section-padding bg-secondary/30">
+    <section id="precios" className="section-padding section-alt">
       <div className="container-bcr">
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -59,7 +59,7 @@ const PricingSection = () => {
         <div className="flex overflow-x-auto gap-4 pb-4 snap-x">
           {plans.map((plan, i) => (
             <ScrollReveal key={i} delay={i * 0.05} className="min-w-[280px] flex-1 snap-center">
-              <div className={`card-dark p-6 h-full flex flex-col relative ${plan.popular ? "border-primary ring-1 ring-primary/30" : ""}`}>
+              <div className={`bg-white rounded-2xl border p-6 h-full flex flex-col relative shadow-sm transition-all duration-300 hover:shadow-lg ${plan.popular ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
                     ⭐ Más Popular
@@ -68,7 +68,7 @@ const PricingSection = () => {
                 <h3 className="text-lg font-bold mb-4">{plan.name}</h3>
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold">{plan.monthly}</span>
+                    <span className="text-3xl font-bold text-foreground">{plan.monthly}</span>
                     <span className="text-sm text-muted-foreground">/mes</span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-1">Setup: {plan.setup}</p>
