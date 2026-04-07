@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
+import logoSvg from "@/assets/bcr-logo.svg";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
