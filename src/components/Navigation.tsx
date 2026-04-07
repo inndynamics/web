@@ -27,7 +27,7 @@ const Navigation = () => {
     }`}>
       <div className="container-bcr flex items-center justify-between h-20">
         <a href="#" className="flex items-center">
-          <img src={logoImg} alt="B&Cr. Growth Partners" className="h-14 w-auto" />
+          <img src={logoImg} alt="B&Cr. Growth Partners" className="h-20 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
