@@ -13,7 +13,7 @@ const HeroSection = () => {
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm">
                 <span className="text-sm text-muted-foreground">
-                  🤖 Agentes IA · Automatización · Web con IA · 2026
+                  Automatiza. Predice. Decide mejor.
                 </span>
               </div>
             </ScrollReveal>
