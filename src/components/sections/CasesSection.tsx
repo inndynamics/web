@@ -21,18 +21,13 @@ const CasesSection = () => {
           <ScrollReveal>
             <div className="border border-primary/20 rounded-2xl bg-card shadow-lg overflow-hidden">
               <div className="flex flex-col lg:flex-row">
-                {/* Logo Side */}
+                {/* Icon Side */}
                 <div className="lg:w-1/3 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center p-10 lg:p-14">
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl" />
-                    <img
-                      src={iapepeLogo}
-                      alt="IAPepe Logo"
-                      className="relative w-40 h-40 lg:w-52 lg:h-52 object-contain drop-shadow-lg"
-                      loading="lazy"
-                      width={512}
-                      height={512}
-                    />
+                    <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="text-5xl lg:text-6xl font-bold text-primary">🤖</span>
+                    </div>
                   </div>
                 </div>
 
