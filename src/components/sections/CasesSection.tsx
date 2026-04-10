@@ -35,7 +35,7 @@ const cases = [
   {
     title: "IAPepe — IA para Gestión de Eventos",
     subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
-    link: "https://iapepe.com",
+    link: "https://aurora-flow-planner.lovable.app",
     tags: [
       "Asistente IA conversacional desplegado",
       "Automatización de logística y agenda",
