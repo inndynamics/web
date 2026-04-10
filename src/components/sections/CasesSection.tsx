@@ -2,6 +2,16 @@ import { Check, ExternalLink } from "lucide-react";
 
 const cases = [
   {
+    title: "IAPepe — IA para Gestión de Eventos",
+    subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
+    link: "https://aurora-flow-planner.lovable.app",
+    tags: [
+      "Asistente IA conversacional desplegado",
+      "Automatización de logística y agenda",
+      "Integración con plataformas de ticketing",
+    ],
+  },
+  {
     title: "Empresa Industrial B2B",
     subtitle: "Servicios B2B • Sevilla • Facturación inicial: 1,5M€",
     roi: "4x ROI",
@@ -30,16 +40,6 @@ const cases = [
       "+25% nuevos clientes",
       "Equipo comercial: 1 → 3 personas",
       "Fundador recuperó 20h/semana",
-    ],
-  },
-  {
-    title: "IAPepe — IA para Gestión de Eventos",
-    subtitle: "Tecnología • Desarrollo de producto IA end-to-end",
-    link: "https://aurora-flow-planner.lovable.app",
-    tags: [
-      "Asistente IA conversacional desplegado",
-      "Automatización de logística y agenda",
-      "Integración con plataformas de ticketing",
     ],
   },
 ];
