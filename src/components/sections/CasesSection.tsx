@@ -1,5 +1,4 @@
 import { Check, ExternalLink, TrendingUp, Building2, Wheat, Briefcase } from "lucide-react";
-import iapepeLogo from "@/assets/iapepe-logo.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const CasesSection = () => {
