@@ -13,6 +13,8 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CasesSection from "@/components/sections/CasesSection";
 import CTASection from "@/components/sections/CTASection";
 import StatsSection from "@/components/sections/StatsSection";
+import LocationsSection from "@/components/sections/LocationsSection";
+import PrivateEquitySection from "@/components/sections/PrivateEquitySection";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => {
@@ -26,11 +28,13 @@ const Index = () => {
       <AgentCatalogSection />
       <TopAgentsSection />
       <ComparisonSection />
+      <PrivateEquitySection />
       <PricingSection />
       <OnboardingSection />
       <IntegrationsSection />
       <TestimonialsSection />
       <CasesSection />
+      <LocationsSection />
       <CTASection />
       <StatsSection />
       <Footer />
