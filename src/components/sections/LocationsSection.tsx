@@ -91,7 +91,7 @@ const LocationsSection = () => {
         </div>
 
         {/* Map + Cards layout */}
-        <div className="max-w-[1000px] mx-auto">
+        <div className="max-w-[700px] mx-auto">
           {/* Dark tech map container */}
           <div
             className="relative rounded-2xl overflow-hidden border border-primary/20"
