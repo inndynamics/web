@@ -1,5 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { Bot, Cog, Code2, ArrowRight } from "lucide-react";
+import { Bot, Cog, Code2, ArrowRight, LayoutDashboard } from "lucide-react";
 
 const services = [
   {
@@ -26,6 +26,14 @@ const services = [
     cta: "Ver Portfolio",
     href: "#contacto",
   },
+  {
+    icon: LayoutDashboard,
+    title: "Aplicaciones a Medida",
+    description: "Creamos ERP, CRM, portales de cliente, dashboards operativos y herramientas internas adaptadas exactamente a tus procesos. Sustituimos hojas de cálculo, software rígido y tareas manuales por plataformas propias, escalables e integradas con tus sistemas.",
+    badge: "ERP · CRM · SaaS interno",
+    cta: "Diseñar App",
+    href: "#contacto",
+  },
 ];
 
 const ServicesSection = () => {
@@ -39,7 +47,7 @@ const ServicesSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="card-dark-hover p-8 h-full flex flex-col">
