@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import ValueProposition from "@/components/sections/ValueProposition";
 import ServicesSection from "@/components/sections/ServicesSection";
-import AgencySection from "@/components/sections/AgencySection";
 import AgentCatalogSection from "@/components/sections/AgentCatalogSection";
 import TopAgentsSection from "@/components/sections/TopAgentsSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
@@ -24,11 +23,10 @@ const Index = () => {
       <HeroSection />
       <ValueProposition />
       <ServicesSection />
-      <AgencySection />
+      <PrivateEquitySection />
       <AgentCatalogSection />
       <TopAgentsSection />
       <ComparisonSection />
-      <PrivateEquitySection />
       <PricingSection />
       <OnboardingSection />
       <IntegrationsSection />
