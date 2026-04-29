@@ -1,5 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { TrendingUp, Brain, BarChart3, Target, Shield, Zap } from "lucide-react";
+import { TrendingUp, Brain, BarChart3, Target, Shield, Zap, Building2, LineChart, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
@@ -36,36 +36,58 @@ const benefits = [
 
 const PrivateEquitySection = () => {
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section id="private-equity" className="section-padding bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-bcr relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Private Equity & Venture Capital
-            </span>
-            <h2 className="text-h2-sm lg:text-h2 mb-4">
-              IA para{" "}
-              <span className="text-gradient-blue">Fondos de Capital Privado</span>
-            </h2>
-            <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
-              Somos el partner tecnológico de referencia para fondos de inversión que buscan
-              acelerar la transformación digital de sus empresas participadas mediante
-              inteligencia artificial y automatización avanzada.
-            </p>
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center mb-16">
+            <div>
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-5">
+                <Building2 className="w-4 h-4" />
+                Private Equity & Venture Capital
+              </span>
+              <h2 className="text-h2-sm lg:text-h2 mb-5">
+                IA para{" "}
+                <span className="text-gradient-blue">Fondos de Capital Privado</span>
+              </h2>
+              <p className="text-body-lg text-muted-foreground mb-6">
+                Implementamos inteligencia artificial en empresas participadas para crear palancas reales de valor: eficiencia operativa, crecimiento comercial, reporting avanzado y escalabilidad cross-portfolio.
+              </p>
+              <a
+                href="#contacto"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Diseñar plan para participadas
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: "12-18", label: "meses para capturar impacto" },
+                { value: "P&L", label: "foco directo en resultados" },
+                { value: "360º", label: "desde DD hasta exit" },
+                { value: "x-portfolio", label: "soluciones replicables" },
+              ].map((item) => (
+                <div key={item.value} className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+                  <div className="text-2xl md:text-3xl font-bold text-primary mb-2">{item.value}</div>
+                  <p className="text-sm text-muted-foreground leading-snug">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
 
         {/* Value prop banner */}
         <ScrollReveal>
-          <div className="mb-12 p-6 md:p-8 rounded-2xl border border-primary/20 bg-primary/5 relative overflow-hidden">
+          <div className="mb-12 p-6 md:p-8 rounded-2xl border border-primary/20 bg-primary/5 relative overflow-hidden shadow-lg shadow-primary/5">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/5 pointer-events-none" />
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-primary/15 flex items-center justify-center">
-                <TrendingUp className="w-8 h-8 text-primary" />
+                <LineChart className="w-8 h-8 text-primary" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-foreground mb-2">
