@@ -20,7 +20,7 @@ const TermsAndConditions = () => {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">1. OBJETO Y ACEPTACIÓN</h2>
-            <p>Los presentes Términos y Condiciones (en adelante, "Términos") regulan el uso de los servicios y productos ofrecidos por BCR GROWTH PARTNERS S.L., empresa domiciliada en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, con correo electrónico contacto@bcrgrowth.com (en adelante, "la Empresa" o "Proveedor").</p>
+            <p>Los presentes Términos y Condiciones (en adelante, "Términos") regulan el uso de los servicios y productos ofrecidos por BCR GROWTH PARTNERS S.L., empresa domiciliada en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, con correo electrónico contacto@inndynamics.com (en adelante, "la Empresa" o "Proveedor").</p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">1.1 Aceptación de los Términos</h3>
             <p>Al acceder, registrarse o utilizar cualquier servicio de BCR GROWTH PARTNERS S.L., incluyendo pero no limitado a su sitio web, aplicaciones móviles, plataformas online, o comunicarse con la Empresa, el usuario (en adelante, "Usuario" o "Usted") acepta sin reservas todos los términos, condiciones y políticas aquí establecidas.</p>
@@ -300,7 +300,7 @@ const TermsAndConditions = () => {
             <h3 className="text-xl font-semibold mt-4 mb-2">9.1 Disponibilidad de Soporte</h3>
             <p>La Empresa proporciona soporte mediante:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li>Otros canales según se especifique</li>
             </ul>
 
@@ -440,7 +440,7 @@ const TermsAndConditions = () => {
             <h3 className="text-xl font-semibold mt-4 mb-2">14.2 Comunicaciones del Usuario</h3>
             <p>El Usuario puede contactar a la Empresa mediante:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
               <li>Formularios en Sitio Web</li>
             </ul>
@@ -461,7 +461,7 @@ const TermsAndConditions = () => {
             <p>El Usuario puede cancelar su cuenta en cualquier momento:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Mediante configuración de cuenta</li>
-              <li>Por correo electrónico a contacto@bcrgrowth.com</li>
+              <li>Por correo electrónico a contacto@inndynamics.com</li>
               <li>Por carta a la dirección postal</li>
             </ul>
             <p className="mt-2">La cancelación será efectiva al final del período de facturación actual.</p>
@@ -579,7 +579,7 @@ const TermsAndConditions = () => {
             <p>Para cualquier pregunta, reclamación o comunicación relativa a estos Términos:</p>
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
             </ul>
 

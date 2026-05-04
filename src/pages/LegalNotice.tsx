@@ -24,7 +24,7 @@ const LegalNotice = () => {
             <ul className="list-none pl-0 mt-4 space-y-1">
               <li><strong>Denominación Social:</strong> BCR GROWTH PARTNERS S.L.</li>
               <li><strong>Domicilio Social:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
-              <li><strong>Correo Electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo Electrónico:</strong> contacto@inndynamics.com</li>
             </ul>
           </section>
 
@@ -169,7 +169,7 @@ const LegalNotice = () => {
             <p>El tratamiento de datos personales se realiza conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Consulte nuestra Política de Privacidad para más detalles.</p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">10.3 Accesibilidad</h3>
-            <p>BCR GROWTH PARTNERS S.L. se compromete a mantener este sitio web accesible conforme a estándares internacionales de accesibilidad web (WCAG 2.1). Si encuentra barreras de accesibilidad, por favor contacte a contacto@bcrgrowth.com.</p>
+            <p>BCR GROWTH PARTNERS S.L. se compromete a mantener este sitio web accesible conforme a estándares internacionales de accesibilidad web (WCAG 2.1). Si encuentra barreras de accesibilidad, por favor contacte a contacto@inndynamics.com.</p>
           </section>
 
           <section className="mb-8">
@@ -191,7 +191,7 @@ const LegalNotice = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">12. CONTENIDOS ILÍCITOS</h2>
             <p>Si el usuario detecta contenidos ilícitos, ofensivos o que violen derechos de terceros, debe notificar inmediatamente a:</p>
-            <p className="mt-2"><strong>Correo de Notificación de Contenidos Ilícitos:</strong> contacto@bcrgrowth.com</p>
+            <p className="mt-2"><strong>Correo de Notificación de Contenidos Ilícitos:</strong> contacto@inndynamics.com</p>
             <p className="mt-4">La notificación debe incluir:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Descripción detallada del contenido ilícito</li>
@@ -247,7 +247,7 @@ const LegalNotice = () => {
             <p>Para cualquier consulta, duda o comunicación relativa a este Aviso Legal, por favor contacte a:</p>
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
             </ul>
           </section>

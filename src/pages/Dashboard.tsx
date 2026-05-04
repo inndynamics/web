@@ -258,8 +258,8 @@ export default function Dashboard() {
                 <CardContent className="p-4 space-y-3">
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-primary" />
-                    <a href="mailto:contacto@bcrgrowth.com" className="text-sm hover:text-primary">
-                      contacto@bcrgrowth.com
+                    <a href="mailto:contacto@inndynamics.com" className="text-sm hover:text-primary">
+                      contacto@inndynamics.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">

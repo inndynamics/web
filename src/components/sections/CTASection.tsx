@@ -58,9 +58,9 @@ const CTASection = () => {
                 Consulta gratuita sin compromiso. Analizamos tu caso específico y te proponemos el agente con mayor ROI para tu sector en 24h.
               </p>
               <div className="space-y-4">
-                <a href="mailto:contacto@bcrgrowth.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                <a href="mailto:contacto@inndynamics.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
-                  contacto@bcrgrowth.com
+                  contacto@inndynamics.com
                 </a>
                 <a href="#contacto" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                   <Calendar className="w-5 h-5 text-primary" />

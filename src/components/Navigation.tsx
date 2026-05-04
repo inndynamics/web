@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/bcr-logo.png";
+import logoImg from "@/assets/inndynamics-logo.png";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
