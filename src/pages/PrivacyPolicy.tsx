@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">1. INFORMACIÓN GENERAL</h2>
             <p>
-              De conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril de 2016 (Reglamento General de Protección de Datos - RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), BCR GROWTH PARTNERS S.L. (en adelante, "la Empresa"), con domicilio social en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, y correo electrónico contacto@bcrgrowth.com, actúa como Responsable del Tratamiento de datos personales.
+              De conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril de 2016 (Reglamento General de Protección de Datos - RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), BCR GROWTH PARTNERS S.L. (en adelante, "la Empresa"), con domicilio social en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, y correo electrónico contacto@inndynamics.com, actúa como Responsable del Tratamiento de datos personales.
             </p>
             <p className="mt-4">Esta Política de Privacidad tiene por objeto informarle sobre:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -40,12 +40,12 @@ const PrivacyPolicy = () => {
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Entidad:</strong> BCR GROWTH PARTNERS S.L.</li>
               <li><strong>Domicilio:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
             </ul>
             <p className="mt-4"><strong>Delegado de Protección de Datos (DPD):</strong></p>
             <p>Para cualquier cuestión relativa a la protección de datos, puede contactar con nuestro Delegado de Protección de Datos mediante:</p>
             <ul className="list-none pl-0 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
             </ul>
           </section>
@@ -217,7 +217,7 @@ const PrivacyPolicy = () => {
               <li>Normas Corporativas Vinculantes (BCRs)</li>
               <li>Otros mecanismos permitidos por el RGPD</li>
             </ul>
-            <p className="mt-4">Puede solicitar información detallada sobre transferencias internacionales mediante contacto@bcrgrowth.com.</p>
+            <p className="mt-4">Puede solicitar información detallada sobre transferencias internacionales mediante contacto@inndynamics.com.</p>
           </section>
 
           <section className="mb-8">
@@ -253,7 +253,7 @@ const PrivacyPolicy = () => {
             <h2 className="text-2xl font-bold mb-4">10. EJERCICIO DE DERECHOS</h2>
             <p>Para ejercitar cualquiera de los derechos anteriores, deberá enviar una solicitud a:</p>
             <ul className="list-none pl-0 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
             </ul>
             <p className="mt-4"><strong>Requisitos de la solicitud:</strong></p>
@@ -318,7 +318,7 @@ const PrivacyPolicy = () => {
             <p>Para cualquier consulta, reclamación o para ejercitar sus derechos, puede contactar con:</p>
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
-              <li><strong>Correo electrónico:</strong> contacto@bcrgrowth.com</li>
+              <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
               <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
             </ul>
             <p className="mt-4"><strong>Autoridad de Control:</strong></p>

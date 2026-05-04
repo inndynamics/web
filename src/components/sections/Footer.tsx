@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoImg from "@/assets/bcr-logo.png";
+import logoImg from "@/assets/inndynamics-logo.png";
 
 const Footer = () => {
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
               <Link to="/aviso-legal" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Aviso Legal</Link>
               <Link to="/politica-privacidad" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Privacidad</Link>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">contacto@bcrgrowth.com</p>
+            <p className="text-sm text-muted-foreground mt-4">contacto@inndynamics.com</p>
           </div>
         </div>
         <div className="border-t border-border pt-8 text-center">

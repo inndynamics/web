@@ -1,4 +1,4 @@
-import logoSvg from "@/assets/bcr-logo.svg";
+import logoSvg from "@/assets/inndynamics-logo.png";
 
 interface LogoProps {
   className?: string;
