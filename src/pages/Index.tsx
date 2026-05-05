@@ -5,7 +5,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import AgentCatalogSection from "@/components/sections/AgentCatalogSection";
 import TopAgentsSection from "@/components/sections/TopAgentsSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
-import PricingSection from "@/components/sections/PricingSection";
+
 import OnboardingSection from "@/components/sections/OnboardingSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -27,7 +27,7 @@ const Index = () => {
       <AgentCatalogSection />
       <TopAgentsSection />
       <ComparisonSection />
-      <PricingSection />
+      
       <OnboardingSection />
       <IntegrationsSection />
       <TestimonialsSection />
