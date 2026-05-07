@@ -23,7 +23,7 @@ const LegalNotice = () => {
             <p>De conformidad con lo dispuesto en la Ley 34/1988, de 11 de noviembre, de Publicidad, la Ley 34/1988, de 11 de noviembre, sobre Ordenación de la Publicidad, y la Ley 3/1991, de 10 de enero, de Competencia Desleal, se proporciona la siguiente información:</p>
             <ul className="list-none pl-0 mt-4 space-y-1">
               <li><strong>Denominación Social:</strong> BCR GROWTH PARTNERS S.L.</li>
-              <li><strong>Domicilio Social:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Domicilio Social:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
               <li><strong>Correo Electrónico:</strong> contacto@inndynamics.com</li>
             </ul>
           </section>
@@ -248,7 +248,7 @@ const LegalNotice = () => {
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
             </ul>
           </section>
 
