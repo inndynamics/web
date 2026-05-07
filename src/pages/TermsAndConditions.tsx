@@ -20,7 +20,7 @@ const TermsAndConditions = () => {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">1. OBJETO Y ACEPTACIÓN</h2>
-            <p>Los presentes Términos y Condiciones (en adelante, "Términos") regulan el uso de los servicios y productos ofrecidos por BCR GROWTH PARTNERS S.L., empresa domiciliada en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, con correo electrónico contacto@inndynamics.com (en adelante, "la Empresa" o "Proveedor").</p>
+            <p>Los presentes Términos y Condiciones (en adelante, "Términos") regulan el uso de los servicios y productos ofrecidos por BCR GROWTH PARTNERS S.L., empresa domiciliada en Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España, con correo electrónico contacto@inndynamics.com (en adelante, "la Empresa" o "Proveedor").</p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">1.1 Aceptación de los Términos</h3>
             <p>Al acceder, registrarse o utilizar cualquier servicio de BCR GROWTH PARTNERS S.L., incluyendo pero no limitado a su sitio web, aplicaciones móviles, plataformas online, o comunicarse con la Empresa, el usuario (en adelante, "Usuario" o "Usted") acepta sin reservas todos los términos, condiciones y políticas aquí establecidas.</p>
