@@ -6,8 +6,6 @@ interface Agent {
   subtitle: string;
   desc: string;
   roi: string;
-  monthly: string;
-  setup: string;
 }
 
 interface Sector {
