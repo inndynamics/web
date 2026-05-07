@@ -36,7 +36,7 @@ const HeroSection = () => {
 
             <ScrollReveal delay={0.2}>
               <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
-                En B&CR Growth implementamos sistemas de IA que trabajan por ti: agentes autónomos, automatización de procesos end-to-end y webs de nueva generación. Transformamos empresas que quieren pasar de la ejecución manual al control estratégico.
+                En InnDynamics implementamos sistemas de IA que trabajan por ti: agentes autónomos, automatización de procesos end-to-end y webs de nueva generación. Transformamos empresas que quieren pasar de la ejecución manual al control estratégico.
               </p>
             </ScrollReveal>
 
