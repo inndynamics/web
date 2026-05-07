@@ -441,7 +441,7 @@ const TermsAndConditions = () => {
             <p>El Usuario puede contactar a la Empresa mediante:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección postal:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
               <li>Formularios en Sitio Web</li>
             </ul>
 
@@ -580,7 +580,7 @@ const TermsAndConditions = () => {
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
             </ul>
 
             <p className="mt-4"><strong>Autoridades de Protección de Datos:</strong></p>

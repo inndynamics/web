@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">1. INFORMACIÓN GENERAL</h2>
             <p>
-              De conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril de 2016 (Reglamento General de Protección de Datos - RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), BCR GROWTH PARTNERS S.L. (en adelante, "la Empresa"), con domicilio social en C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España, y correo electrónico contacto@inndynamics.com, actúa como Responsable del Tratamiento de datos personales.
+              De conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril de 2016 (Reglamento General de Protección de Datos - RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), BCR GROWTH PARTNERS S.L. (en adelante, "la Empresa"), con domicilio social en Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España, y correo electrónico contacto@inndynamics.com, actúa como Responsable del Tratamiento de datos personales.
             </p>
             <p className="mt-4">Esta Política de Privacidad tiene por objeto informarle sobre:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -39,14 +39,14 @@ const PrivacyPolicy = () => {
             <p><strong>Responsable del Tratamiento:</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Entidad:</strong> BCR GROWTH PARTNERS S.L.</li>
-              <li><strong>Domicilio:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Domicilio:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
             </ul>
             <p className="mt-4"><strong>Delegado de Protección de Datos (DPD):</strong></p>
             <p>Para cualquier cuestión relativa a la protección de datos, puede contactar con nuestro Delegado de Protección de Datos mediante:</p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección postal:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
             </ul>
           </section>
 
@@ -254,7 +254,7 @@ const PrivacyPolicy = () => {
             <p>Para ejercitar cualquiera de los derechos anteriores, deberá enviar una solicitud a:</p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección postal:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección postal:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
             </ul>
             <p className="mt-4"><strong>Requisitos de la solicitud:</strong></p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -319,7 +319,7 @@ const PrivacyPolicy = () => {
             <p className="mt-2"><strong>BCR GROWTH PARTNERS S.L.</strong></p>
             <ul className="list-none pl-0 mt-2 space-y-1">
               <li><strong>Correo electrónico:</strong> contacto@inndynamics.com</li>
-              <li><strong>Dirección:</strong> C/Carlos de Cepeda, 3. 2A. 41005. Sevilla, España</li>
+              <li><strong>Dirección:</strong> Plaza Padre Jerónimo de Córdoba, 13. 3A. 41003. Sevilla, España</li>
             </ul>
             <p className="mt-4"><strong>Autoridad de Control:</strong></p>
             <p>Si considera que el tratamiento de sus datos viola sus derechos, también puede presentar una reclamación ante la Autoridad de Protección de Datos competente:</p>
