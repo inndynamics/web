@@ -6,7 +6,7 @@ const services = [
     icon: Bot,
     title: "Agentes de IA Especializados",
     description: "Desplegamos agentes autónomos entrenados para tu sector: atención al cliente 24/7, cualificación de leads, gestión documental, soporte técnico y mucho más. 79 soluciones catalogadas para 13 sectores.",
-    badge: "Desde 300€/mes",
+    badge: "79 agentes · 13 sectores",
     cta: "Ver Catálogo",
     href: "#agentes",
   },
